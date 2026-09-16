@@ -551,6 +551,14 @@
   color: rgba(255,255,255,0.64);
 }
 
+.footer-fathom-logo {
+  width: 220px;
+  height: auto;
+  margin-top: 1.65rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
+}
+
 .footer-col {
   display: flex;
   flex-direction: column;

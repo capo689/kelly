@@ -11,6 +11,7 @@ export default function Footer() {
         <div className="footer-brand-block">
           <BrandMark inverse />
           <p>Thoughtful real estate guidance across Central Oregon and the Central Oregon Coast.</p>
+          <img className="footer-fathom-logo" src="/brand/fathom-realty.webp" alt="Fathom Realty" />
         </div>
         <div className="footer-col">
           <h3>Browse</h3>
