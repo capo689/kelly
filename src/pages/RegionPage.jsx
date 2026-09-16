@@ -6,8 +6,21 @@ import ImageFrame from '../components/ImageFrame'
 import SectionHeading from '../components/SectionHeading'
 import CTASection from '../components/CTASection'
 import ButtonLink from '../components/ButtonLink'
+import CommunityLinks from '../components/CommunityLinks'
+import FAQSection from '../components/FAQSection'
+import { communitiesByRegion } from '../data/communityData'
 
 export default function RegionPage({ data }) {
+  const regionKey = data.path === '/central-oregon' ? 'central' : 'coast'
+  const faqs = regionKey === 'central' ? [
+    ['Where should I start a Central Oregon home search?', 'Begin with the routine you want: access to work, trails, town, schools, services, or more land. Then compare Bend, Sisters, Tumalo, Black Butte Ranch, Camp Sherman, and Redmond around those priorities.'],
+    ['What should I know about rural Central Oregon property?', 'Rural due diligence may include wells, septic systems, water rights, zoning, access, outbuildings, wildfire planning, and insurance. The relevant checks depend on the property.'],
+    ['How are Bend and Sisters different?', 'Bend offers a larger concentration of services, neighborhoods, and city activity. Sisters has a smaller-town scale and a strong connection to the surrounding mountains and forest.'],
+  ] : [
+    ['Where should I start an Oregon Coast home search?', 'Decide whether you want a larger service center, a quiet village, a sandy shoreline, a rocky coast, walkability, or privacy. Then compare Newport, Waldport, Yachats, and Seal Rock in person.'],
+    ['What should I inspect in a coastal home?', 'Coastal inspections should consider roof, siding, windows, moisture, drainage, decks, crawlspace, fasteners, and other systems exposed to wind and salt.'],
+    ['What should I know about coastal hazards?', 'Review official hazard maps, elevation, access routes, insurance, drainage, and site-specific conditions. Use official agencies and qualified professionals for property-level decisions.'],
+  ]
   return (
     <PageTransition>
       <Hero eyebrow={data.eyebrow} title={data.title} copy={data.intro} image={data.hero} position={data.alignment} primary={{ label: data.cta, to: '/contact' }} compact />
@@ -29,6 +42,8 @@ export default function RegionPage({ data }) {
           </div>
         </div>
       </section>
+
+      <CommunityLinks communities={communitiesByRegion[regionKey]} title={regionKey === 'central' ? 'Find your Central Oregon fit.' : 'Find your place on the coast.'} />
 
       <section className="section mist priorities-section">
         <div className="wrap asym-grid">
@@ -59,6 +74,8 @@ export default function RegionPage({ data }) {
           </Reveal>
         </div>
       </section>
+
+      <FAQSection title={regionKey === 'central' ? 'Central Oregon real estate questions' : 'Central Oregon Coast real estate questions'} items={faqs} />
 
       <CTASection title={data.closeTitle} copy={data.closeCopy} button={data.cta} />
     </PageTransition>

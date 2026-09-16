@@ -4,12 +4,7 @@ import Hero from '../components/Hero'
 import PageTransition from '../components/PageTransition'
 import Reveal from '../components/Reveal'
 import CTASection from '../components/CTASection'
-
-const futureTopics = [
-  ['Moving to Sisters', 'Mountain lifestyle and nearby recreation', '/media/IMG_1131.webp'],
-  ['Newport and Nye Beach', 'Community, coast, and everyday life', '/media/IMG_2514.webp'],
-  ['Second Home Thinking', 'What to consider before beginning the search', '/media/24_Horizon_Hill_Rd_lot.webp'],
-]
+import { communityRoutes } from '../data/communityData'
 
 export default function Blog() {
   return (
@@ -31,11 +26,13 @@ export default function Blog() {
 
       <section className="section mist future-journal">
         <div className="wrap">
-          <Reveal className="future-journal-title"><div className="section-kicker">Coming to the journal</div><h2>More ways to know Oregon.</h2></Reveal>
+          <Reveal className="future-journal-title"><div className="section-kicker">Community guides</div><h2>Know the place before you choose the property.</h2><p>Clear, local starting points for comparing communities, understanding property considerations, and asking better questions.</p></Reveal>
           <div className="future-topic-list">
-            {futureTopics.map(([title, copy, image], index) => (
-              <Reveal key={title} className="future-topic" delay={index * 80}>
-                <span>0{index + 1}</span><img src={image} alt="" loading="lazy" /><div><h3>{title}</h3><p>{copy}</p></div><ArrowUpRight />
+            {communityRoutes.map((community, index) => (
+              <Reveal key={community.path} delay={(index % 5) * 45}>
+                <Link to={community.path} className="future-topic">
+                  <span>{String(index + 1).padStart(2, '0')}</span><img src={community.hero} alt={`${community.name}, Oregon`} loading="lazy" /><div><h3>{community.name} Real Estate Guide</h3><p>{community.answer}</p></div><ArrowUpRight />
+                </Link>
               </Reveal>
             ))}
           </div>

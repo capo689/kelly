@@ -6,6 +6,7 @@ import CTASection from '../components/CTASection'
 const sections = [
   {
     title: 'Mountain Living in Central Oregon',
+    alt: 'Cascade mountain landscape in Central Oregon',
     paragraphs: [
       'There is something special about waking up surrounded by ponderosa pine trees, junipers, Cascade Mountain views, and some of Oregon’s most iconic peaks.',
       'Sisters offers a quintessential Central Oregon lifestyle, with easy access to the Three Sisters, hiking, camping, mountain biking, fishing, and scenic drives. Just north of Sisters, Black Butte Ranch and Camp Sherman offer mountain views, golf, trails, horseback riding, the Metolius River, and year-round recreation.',
@@ -15,6 +16,7 @@ const sections = [
   },
   {
     title: 'Life on the Oregon Coast',
+    alt: 'Rocky shoreline on the Central Oregon Coast',
     paragraphs: [
       'Head west and the ponderosas give way to shore pines, manzanita, rocky beaches, and ocean views. The pace changes. The landscape changes. A morning walk becomes a chance to search for starfish and sand dollars while listening to the waves.',
       'Newport offers a classic Oregon coastal lifestyle, from the working waterfront and marina to beaches, local restaurants, and fresh seafood from the docks. Nye Beach adds wide sandy shores, colorful sunsets, neighborhood shops, galleries, coffee spots, and a relaxed, walkable atmosphere.',
@@ -25,6 +27,7 @@ const sections = [
   },
   {
     title: 'A Different Kind of Outdoor Lifestyle',
+    alt: 'Dogs exploring an Oregon mountain trail',
     paragraphs: [
       'Mountain living and coastal living may look completely different, but they share something important. The outdoors are part of everyday life.',
       'In Central Oregon, the day might begin with a hike beneath the Three Sisters, a mountain bike ride, paddleboarding on Suttle Lake, or skiing at Mt. Bachelor. At the coast, it might mean beachcombing, surfing, fishing, crabbing, stand-up paddleboarding, or walking the beach with the dogs.',
@@ -35,6 +38,7 @@ const sections = [
   },
   {
     title: 'From the Mountains to the Ocean',
+    alt: 'Oregon coastline and ocean horizon',
     paragraphs: [
       'One of the things I love most about Oregon real estate is the opportunity to create a lifestyle that connects both places.',
       'Maybe you are looking to move to Bend for the trails, restaurants, recreation, and Central Oregon lifestyle. Maybe you are ready for Sisters, where small-town charm meets the Cascade Mountains. Perhaps your dream is to wake up in Yachats or Waldport with the sound of the ocean nearby.',
@@ -59,7 +63,7 @@ export default function Article() {
           <section className={`article-section ${index % 2 ? 'reverse' : ''}`} key={section.title}>
             <Reveal className={`article-image image-reveal ${section.preserveSubject ? 'safe-image' : ''}`} direction="scale">
               {section.preserveSubject && <span className="safe-image-backdrop" style={{ backgroundImage: `url(${section.image})` }} aria-hidden="true" />}
-              <img src={section.image} alt="" loading="lazy" />
+              <img src={section.image} alt={section.alt} loading="lazy" />
             </Reveal>
             <Reveal className="article-copy" direction={index % 2 ? 'left' : 'right'}>
               <span className="article-number">0{index + 1}</span>

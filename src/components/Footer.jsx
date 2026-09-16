@@ -22,10 +22,10 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h3>Discover</h3>
+          <Link to="/central-oregon">Central Oregon</Link>
+          <Link to="/central-oregon-coast">Oregon Coast</Link>
           <Link to="/about-me">About Kelly</Link>
-          <Link to="/blog">Journal</Link>
-          <Link to="/videos">Videos</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/blog">Local Guides</Link>
         </div>
         <div className="footer-col footer-contact">
           <h3>Connect</h3>

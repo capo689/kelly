@@ -46,6 +46,12 @@
   .article-section, .article-section.reverse { grid-template-columns: 1fr; }
   .article-section.reverse .article-image { order: 0; }
   .article-image { min-height: 560px; }
+  .community-answer-grid, .faq-layout { grid-template-columns: 1fr; }
+  .faq-heading { position: relative; top: auto; }
+  .community-highlight-grid { grid-template-columns: 1fr; }
+  .community-highlight { min-height: 250px; }
+  .community-highlight .section-kicker { margin-top: 2.5rem; }
+  .related-community-grid { grid-template-columns: 1fr; }
   .video-card.feature { grid-column: auto; min-height: 520px; }
   .footer-main { grid-template-columns: 1fr 1fr; }
   .footer-brand-block, .footer-contact { grid-column: 1 / 3; }
@@ -99,6 +105,10 @@
   .future-topic > svg { grid-row: 2; }
   .featured-article-image, .article-image { min-height: 380px; }
   .featured-article-copy, .article-copy { padding: 3rem 1.4rem; }
+  .community-link-grid { grid-template-columns: 1fr; }
+  .community-link-card { grid-template-columns: 38px 1fr; padding: 1.5rem; }
+  .community-link-card > svg { display: none; }
+  .community-answer-grid .image-frame { min-height: 420px; }
   .video-card, .video-card.feature { min-height: 420px; }
   .field-grid { grid-template-columns: 1fr; }
   .field-grid label.full { grid-column: auto; }
