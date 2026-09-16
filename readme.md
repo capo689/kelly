@@ -1,6 +1,6 @@
 # Kelly Miller Real Estate
 
-A custom React site for Kelly Miller's Cascades to Coast real estate practice. The experience combines editorial layouts, client photography, smooth scrolling, cinematic transitions, and a subtle WebGL terrain treatment.
+A custom React site for Kelly Miller's Cascades to Coast real estate practice. The experience combines editorial layouts, client photography, smooth scrolling, and cinematic transitions.
 
 ## Local development
 

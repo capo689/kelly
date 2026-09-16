@@ -24,7 +24,6 @@
   .page-hero { min-height: 820px; }
   .page-hero.compact { min-height: 700px; }
   .hero-wash, .page-hero.split .hero-wash { background: linear-gradient(90deg, rgba(17,42,53,0.9), rgba(17,42,53,0.48)); }
-  .terrain-canvas { display: none; }
   .hero-coordinate { display: none; }
   .portrait-composition { max-width: 650px; margin: auto; }
   .values-statement, .contact-details { position: relative; top: auto; }
@@ -56,13 +55,14 @@
 @media (max-width: 640px) {
   :root { --wrap: calc(100% - 34px); }
   .section { padding: 5.8rem 0; }
+  .page-hero.compact { min-height: 820px; }
   h1 { font-size: clamp(3rem, 14vw, 5rem); }
   h2 { font-size: clamp(2.2rem, 11vw, 3.8rem); }
   p { font-size: 0.98rem; }
   .brand-copy small { display: none; }
   .site-header.is-scrolled { height: 68px; }
   .hero-content { padding-top: 4rem; }
-  .hero-scroll { left: 18px; }
+  .hero-scroll { right: 18px; }
   .hero-actions { align-items: stretch; flex-direction: column; max-width: 280px; }
   .button-link { width: 100%; }
   .portrait-composition { padding-left: 1.2rem; padding-bottom: 1.2rem; }

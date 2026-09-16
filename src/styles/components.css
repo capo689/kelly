@@ -281,8 +281,7 @@
 }
 
 .hero-media,
-.hero-wash,
-.terrain-canvas {
+.hero-wash {
   position: absolute;
   inset: 0;
 }
@@ -314,13 +313,6 @@
 
 .page-hero.split .hero-wash {
   background: linear-gradient(90deg, rgba(17, 42, 53, 0.92) 0%, rgba(17, 42, 53, 0.68) 46%, rgba(17, 42, 53, 0.1) 75%);
-}
-
-.terrain-canvas {
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.7;
-  mask-image: linear-gradient(to top, black, transparent 68%);
 }
 
 .hero-content {
@@ -369,7 +361,7 @@
 .hero-scroll {
   position: absolute;
   z-index: 3;
-  left: max(28px, calc((100vw - min(1240px, calc(100vw - 88px))) / 2));
+  right: max(28px, calc((100vw - min(1240px, calc(100vw - 88px))) / 2));
   bottom: 32px;
   display: flex;
   align-items: center;
