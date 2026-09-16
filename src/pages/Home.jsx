@@ -81,8 +81,8 @@ export default function Home() {
           <SectionHeading kicker="Oregon, as Kelly knows it" title="Mountains. Ocean. Open sky." />
           <div className="home-gallery">
             <ImageFrame src="/media/IMG_1131.webp" alt="Mountain lake in Central Oregon" className="gallery-main" caption="The Cascades" />
-            <ImageFrame src="/media/IMG_1025.webp" alt="Lighthouse along the Oregon Coast" className="gallery-top" caption="The Coast" />
-            <ImageFrame src="/media/IMG_0417.webp" alt="Kelly's dogs on a mountain trail" className="gallery-bottom" caption="The good life" />
+            <ImageFrame src="/media/IMG_1025.webp" alt="Lighthouse along the Oregon Coast" className="gallery-top" caption="The Coast" preserveSubject />
+            <ImageFrame src="/media/IMG_0417.webp" alt="Kelly's dogs on a mountain trail" className="gallery-bottom" caption="The good life" preserveSubject />
           </div>
         </div>
       </section>

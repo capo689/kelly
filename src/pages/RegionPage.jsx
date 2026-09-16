@@ -18,7 +18,7 @@ export default function RegionPage({ data }) {
           <div className="region-story-grid">
             {data.cards.map((card, index) => (
               <Reveal key={card.title} className={`region-story-card ${index === 1 ? 'offset' : ''}`} delay={index * 100}>
-                <ImageFrame src={card.image} alt="" />
+                <ImageFrame src={card.image} alt="" preserveSubject={card.preserveSubject} />
                 <div className="region-story-copy">
                   <div className="section-kicker">{card.tag}</div>
                   <h3>{card.title}</h3>
@@ -50,7 +50,7 @@ export default function RegionPage({ data }) {
 
       <section className="section region-conversation">
         <div className="wrap grid-2">
-          <ImageFrame src={data.cards[1].image} alt="Oregon landscape and lifestyle" />
+          <ImageFrame src={data.cards[1].image} alt="Oregon landscape and lifestyle" preserveSubject={data.cards[1].preserveSubject} />
           <Reveal direction="right">
             <div className="section-kicker">Your search can start with a conversation</div>
             <h2>{data.closeTitle}</h2>

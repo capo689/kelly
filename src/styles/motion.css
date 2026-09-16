@@ -52,6 +52,11 @@
   transform: scale(1);
 }
 
+.image-reveal.safe-image img,
+.image-reveal.safe-image.is-visible img {
+  transform: none;
+}
+
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
   50% { transform: translate3d(0, -16px, 0) rotate(1deg); }

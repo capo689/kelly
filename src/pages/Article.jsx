@@ -31,6 +31,7 @@ const sections = [
       'And sometimes the best activity is simply sitting outside and taking it all in. That is what makes Oregon so special.',
     ],
     image: '/media/IMG_0417.webp',
+    preserveSubject: true,
   },
   {
     title: 'From the Mountains to the Ocean',
@@ -56,7 +57,10 @@ export default function Article() {
         </div>
         {sections.map((section, index) => (
           <section className={`article-section ${index % 2 ? 'reverse' : ''}`} key={section.title}>
-            <Reveal className="article-image image-reveal" direction="scale"><img src={section.image} alt="" loading="lazy" /></Reveal>
+            <Reveal className={`article-image image-reveal ${section.preserveSubject ? 'safe-image' : ''}`} direction="scale">
+              {section.preserveSubject && <span className="safe-image-backdrop" style={{ backgroundImage: `url(${section.image})` }} aria-hidden="true" />}
+              <img src={section.image} alt="" loading="lazy" />
+            </Reveal>
             <Reveal className="article-copy" direction={index % 2 ? 'left' : 'right'}>
               <span className="article-number">0{index + 1}</span>
               <h2>{section.title}</h2>

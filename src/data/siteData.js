@@ -78,7 +78,7 @@ export const regionPages = {
     statement: 'Your Oregon Coast adventure starts here.',
     cards: [
       { tag: 'Ocean View', title: 'Room for the Horizon', text: 'A coastal home, a second home, or land with a view that makes every day feel different.', image: '/media/24_Horizon_Hill_Rd_lot.webp' },
-      { tag: 'Newport', title: 'Marina and Bay Life', text: 'The working waterfront, local restaurants, fresh seafood, shops, and the energy of Nye Beach.', image: '/media/IMG_1025.webp' },
+      { tag: 'Newport', title: 'Marina and Bay Life', text: 'The working waterfront, local restaurants, fresh seafood, shops, and the energy of Nye Beach.', image: '/media/IMG_1025.webp', preserveSubject: true },
       { tag: 'Coastal Cottage', title: 'A Slower Pace', text: 'A tucked-away home close to the shoreline, forest trails, and everything you love about the coast.', image: '/media/Kobe1.webp' },
     ],
     priorities: [
@@ -99,8 +99,8 @@ export const regionPages = {
 export const videoTopics = [
   { title: 'The Central Oregon Coast', image: '/media/IMG_2514.webp', subtitle: 'Coastline and community' },
   { title: 'Life Near the Cascades', image: '/media/IMG_1131.webp', subtitle: 'Mountain air and open space' },
-  { title: 'Community Spotlight', image: '/media/IMG_1025.webp', subtitle: 'Places worth knowing' },
-  { title: 'Oregon with Kiva and Xoco', image: '/media/IMG_0417.webp', subtitle: 'The trails Kelly loves' },
+  { title: 'Community Spotlight', image: '/media/IMG_1025.webp', subtitle: 'Places worth knowing', preserveSubject: true },
+  { title: 'Oregon with Kiva and Xoco', image: '/media/IMG_0417.webp', subtitle: 'The trails Kelly loves', preserveSubject: true },
   { title: 'Property Stories', image: '/media/LP3.webp', subtitle: 'Homes with a sense of place' },
   { title: 'Meet Kelly', image: '/media/KellyM-PhotosxKristin-1.webp', subtitle: 'A personal introduction' },
 ]

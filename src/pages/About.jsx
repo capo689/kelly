@@ -51,7 +51,7 @@ export default function About() {
 
       <section className="about-dogs">
         <div className="about-dogs-grid">
-          <ImageFrame src="/media/IMG_0417.webp" alt="Kiva and Xoco on an Oregon trail" />
+          <ImageFrame src="/media/IMG_0417.webp" alt="Kiva and Xoco on an Oregon trail" preserveSubject />
           <ImageFrame src="/media/IMG_2524.webp" alt="Rocky beach on the Oregon Coast" />
           <ImageFrame src="/media/KellyM-PhotosxKristin-3.webp" alt="Kelly holding her dog Kiva" position="center 25%" />
         </div>

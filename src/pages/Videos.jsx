@@ -15,7 +15,8 @@ export default function Videos() {
           <SectionHeading kicker="Field notes in motion" title="Stories from across Kelly’s Oregon." copy="The library is designed and ready for Kelly’s approved footage, titles, and captions. The current frames are drawn from her own photography." />
           <div className="video-grid">
             {videoTopics.map((video, index) => (
-              <Reveal className={`video-card ${index === 0 ? 'feature' : ''}`} key={video.title} delay={(index % 3) * 80}>
+              <Reveal className={`video-card ${video.preserveSubject ? 'safe-image' : ''} ${index === 0 ? 'feature' : ''}`} key={video.title} delay={(index % 3) * 80}>
+                {video.preserveSubject && <span className="safe-image-backdrop" style={{ backgroundImage: `url(${video.image})` }} aria-hidden="true" />}
                 <img src={video.image} alt="" loading="lazy" />
                 <div className="video-card-wash" />
                 <span className="video-play"><Play fill="currentColor" /></span>
