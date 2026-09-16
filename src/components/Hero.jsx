@@ -9,7 +9,6 @@ export default function Hero({ eyebrow, title, copy, image, imageRight, position
         {imageRight && <div className="hero-image right" style={{ backgroundImage: `url(${imageRight})` }} />}
       </div>
       <div className="hero-wash" />
-      <div className="hero-coordinate" aria-hidden="true">44.0582° N&nbsp;&nbsp; 121.3153° W</div>
       <div className="wrap hero-content">
         <motion.div initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
           <div className="hero-kicker"><span />{eyebrow}</div>
@@ -23,7 +22,6 @@ export default function Hero({ eyebrow, title, copy, image, imageRight, position
           )}
         </motion.div>
       </div>
-      <div className="hero-scroll" aria-hidden="true"><span />Scroll to explore</div>
     </section>
   )
 }
