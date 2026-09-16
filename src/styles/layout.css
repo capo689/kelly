@@ -1,0 +1,93 @@
+.site-shell {
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.page-main {
+  position: relative;
+}
+
+.wrap {
+  width: var(--wrap);
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding: clamp(6.5rem, 11vw, 11rem) 0;
+}
+
+.section.compact {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.section.mist {
+  background: var(--mist);
+}
+
+.section.cream {
+  background: var(--cream);
+}
+
+.section.deep {
+  background: var(--deep);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.section.deep h2,
+.section.deep h3,
+.section.deep .section-kicker {
+  color: var(--white);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.copy-narrow {
+  max-width: 760px;
+}
+
+.copy-medium {
+  max-width: 940px;
+}
+
+.section-heading {
+  margin-bottom: clamp(2.75rem, 5vw, 5.5rem);
+}
+
+.section-heading h2 {
+  max-width: 1000px;
+  margin-bottom: 1.4rem;
+}
+
+.section-heading p {
+  max-width: 760px;
+}
+
+.asym-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}

@@ -1,1 +1,29 @@
-I AM CONTENTS HEAR ME ROAR
+# Kelly Miller Real Estate
+
+A custom React site for Kelly Miller's Cascades to Coast real estate practice. The experience combines editorial layouts, client photography, smooth scrolling, cinematic transitions, and a subtle WebGL terrain treatment.
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+The repository includes a Vercel rewrite so client-side routes resolve correctly when opened directly.
+
+## Project structure
+
+- `src/components`: shared site components, including the universal header and footer
+- `src/pages`: page-level compositions
+- `src/styles`: layered design tokens, foundations, components, layouts, motion, and responsive rules
+- `public/media`: optimized client photography
+- `public/brand`: supplied brand graphics
+
+Forms are intentionally presentation-only in this design phase. Form processing and SEO/AEO implementation are reserved for a later phase.
