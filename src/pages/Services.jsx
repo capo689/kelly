@@ -15,7 +15,7 @@ const services = [
 export default function Services() {
   return (
     <PageTransition>
-      <Hero eyebrow="Services" title="Guidance Across Two Remarkable Regions" copy="Local insight, a genuine love for the Oregon lifestyle, and dependable guidance for buyers and sellers." image="/media/IMG_8358.webp" position="center 44%" primary={{ label: 'Start a Conversation', to: '/contact' }} compact />
+      <Hero eyebrow="Services" title="Guidance Across Two Remarkable Regions" copy="Local insight, a genuine love for the Oregon lifestyle, and dependable guidance for buyer agents and seller agents." image="/media/IMG_8358.webp" position="center 44%" primary={{ label: 'Start a Conversation', to: '/contact' }} compact />
 
       <section className="section services-intro">
         <div className="wrap">
