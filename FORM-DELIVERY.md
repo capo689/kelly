@@ -9,6 +9,19 @@ include the visitor's name, email, phone, interest, region and message. The
 visitor's email supplies the reply address. FormSubmit sends the notification
 using its own mail service; it does not authenticate Kelly's domain as a sender.
 
+## Activated address — keep this stable
+
+Kelly’s September 17 confirmation shows this exact activated form address:
+`https://www.kellymillerrealestate.com/`.
+
+Both AJAX and native HTML submissions must send that value as `_url`.
+FormSubmit treated `/contact` and `/book-appointment` as different form addresses
+and rejected those submissions even though the root address was activated.
+Keep the individual page in `source_page`, and distinguish the forms by subject
+and `form`. `src/data/formDelivery.js` is the shared configuration.
+
+Regression checks: `node --test scripts/form-delivery.test.mjs`.
+
 ## Activation and verification
 
 FormSubmit requires the recipient to click its activation email after the first

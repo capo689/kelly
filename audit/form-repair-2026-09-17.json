@@ -1,0 +1,20 @@
+{
+  "verifiedAt": "2026-09-17T22:23:07.044153+00:00",
+  "deploymentCommit": "10c79ab",
+  "activatedFormUrl": "https://www.kellymillerrealestate.com/",
+  "recipient": "kellymiller.realestate@gmail.com",
+  "tests": [
+    {
+      "page": "https://www.kellymillerrealestate.com/contact",
+      "reference": "KELLY-CONTACT-FIX-0917",
+      "result": "Provider-confirmed success; form reset; live UI displayed Thank you\u2014your message has been sent to Kelly."
+    },
+    {
+      "page": "https://www.kellymillerrealestate.com/book-appointment",
+      "reference": "KELLY-APPOINTMENT-FIX-0917",
+      "result": "Provider-confirmed success; form reset; live UI displayed Your request has been sent to Kelly."
+    }
+  ],
+  "inboxReceipt": "Not independently observed; recipient mailbox unavailable",
+  "regressionTests": "3 passed; build, lint and static site checks passed"
+}

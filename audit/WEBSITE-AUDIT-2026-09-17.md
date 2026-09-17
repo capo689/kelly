@@ -1,6 +1,6 @@
 # Kelly Miller website audit — September 17, 2026
 
-**Status: technical corrections and policy pages verified; form delivery remains unresolved. This is not an ADA/WCAG conformance certification or a legal opinion.**
+**Status: technical corrections and policy pages verified; both live forms now return provider-confirmed success after correcting their form address. Kelly’s inbox receipt is not independently verified. This is not an ADA/WCAG conformance certification or a legal opinion.**
 
 Site: https://www.kellymillerrealestate.com
 
@@ -8,7 +8,7 @@ Site: https://www.kellymillerrealestate.com
 
 | Priority | Finding | Action / owner |
 |---|---|---|
-| Critical | Both live forms returned an error. FormSubmit's diagnostic response still says activation is required, despite the reported earlier activation. | Kelly must activate the newest email for **kellymiller.realestate@gmail.com**. Then test both forms once and confirm the uniquely identified messages in her inbox and that Reply reaches the submitter. Provider acceptance alone is not inbox delivery. |
+| Resolved; inbox check outstanding | Kelly had correctly activated the root URL. The code incorrectly sent page-specific `_url` values, which the provider treated as different forms. | Both forms now reuse the activated root URL. Live Contact and Appointment tests returned success. Kelly can verify receipt of KELLY-CONTACT-FIX-0917 and KELLY-APPOINTMENT-FIX-0917 in her inbox. |
 | Resolved / review | User confirmed Fathom is the brokerage; Kelly’s public professional profile identifies Fathom Realty Oregon, LLC. | Added the full name to the header and policy pages. Principal broker should review the final advertising/policy wording as part of normal oversight. |
 | Resolved | Privacy, website terms and accessibility pages were missing. | Added all three, footer links and form privacy links. Notice reflects the confirmed email-only inquiry process and names the delivery/hosting/email providers. |
 | High | Full accessibility conformance remains unverified, especially contrast over imagery and assistive-technology use. | Complete screen-reader, Safari/iOS, zoom/text-spacing and image-overlay contrast review. Automated results below are a useful gate, not certification. |
@@ -27,11 +27,15 @@ Site: https://www.kellymillerrealestate.com
 - Added clickjacking protection, MIME sniffing protection, a referrer policy, restricted device permissions, and limited CSP directives. The CSP is hardening, not a complete script allowlist.
 - No analytics, advertising pixels, application cookies or browser-storage writes were found in the reviewed application source. This does not establish that the hosting/form providers retain no logs or data.
 
-### Forms — not passed end to end
+### Forms — corrected after the initial audit
+
+**Update:** Kelly supplied a screenshot confirming activation for `https://www.kellymillerrealestate.com/`. Her activation was correct. The code’s per-page `_url` values caused the rejection. Commit `10c79ab` gives both forms the same activated root URL, with a separate `source_page`. Both real production-browser submissions then returned success and cleared the submitted fields. Three regression tests pass, including preserving that shared activation address and rejecting unsuccessful responses. No new activation, paid service or DNS change was necessary. Inbox receipt remains for Kelly to confirm.
+
+The following records the earlier failed tests before that correction:
 
 Live tests covered Contact and Book Appointment with clearly marked test submissions. Empty required fields and invalid email were rejected by native browser validation. Sending disables the fields/button; provider failure preserves the entered message and offers direct email/phone contact. Both actual submissions ended in an error, not a success confirmation.
 
-A diagnostic request using the website's Origin/Referer received HTTP 200 with `success: "false"` and an activation-required message. **HTTP 200 does not mean the inquiry was delivered.** The provider said it sent another activation email. No inbox access or delivery receipt was available. Stop treating the connection as finished until Kelly confirms receipt of both test messages.
+A diagnostic request using the website's Origin/Referer received HTTP 200 with `success: "false"` and an activation-required message. **HTTP 200 does not mean the inquiry was delivered.** The provider said it sent another activation email. No inbox access or delivery receipt was available. The subsequent address correction and successful live tests are recorded above; inbox delivery still requires recipient confirmation.
 
 Corrected appointment source-page identification and added a visitor-friendly activation error. The destination is **kellymiller.realestate@gmail.com** for both forms. This free FormSubmit connection does not send through Kelly's domain or Resend. Do not add domain SPF/DKIM records for a service the site does not use. The site has no local lead database; do not assume failed submissions are recoverable.
 
