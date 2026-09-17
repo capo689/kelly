@@ -31,7 +31,7 @@ export default function RegionPage({ data }) {
           <div className="region-story-grid">
             {data.cards.map((card, index) => (
               <Reveal key={card.title} className={`region-story-card ${index === 1 ? 'offset' : ''}`} delay={index * 100}>
-                <ImageFrame src={card.image} alt="" preserveSubject={card.preserveSubject} />
+                <ImageFrame src={card.image} alt={card.title} preserveSubject={card.preserveSubject} />
                 <div className="region-story-copy">
                   <div className="section-kicker">{card.tag}</div>
                   <h3>{card.title}</h3>

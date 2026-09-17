@@ -21,7 +21,6 @@ export default function About() {
           </Reveal>
           <div className="about-portrait-stack">
             <ImageFrame src="/media/EXIT-54_2-f34639a3.webp" alt="Portrait of Kelly Miller" className="about-headshot" position="center top" />
-            <div className="about-signature">Kelly</div>
           </div>
         </div>
       </section>

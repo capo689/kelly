@@ -23,7 +23,7 @@ export default function Services() {
           <div className="service-feature-grid">
             {services.map(({ icon: Icon, ...service }, index) => (
               <Reveal key={service.label} className="service-feature" delay={index * 100}>
-                <ImageFrame src={service.image} alt="" />
+                <ImageFrame src={service.image} alt={`${service.label}: ${service.title}`} />
                 <div className="service-feature-copy">
                   <span className="service-icon"><Icon /></span>
                   <div className="section-kicker">{service.label}</div>

@@ -37,7 +37,7 @@ export default function SecondHomes() {
           <div className="opportunity-grid">
             {opportunities.map(({ icon: Icon, ...item }, index) => (
               <Reveal key={item.title} className="opportunity-card" delay={index * 70}>
-                <ImageFrame src={item.image} alt="" />
+                <ImageFrame src={item.image} alt={item.title} />
                 <div className="opportunity-copy"><Icon /><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.copy}</p></div>
               </Reveal>
             ))}

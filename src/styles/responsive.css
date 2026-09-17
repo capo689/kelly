@@ -90,7 +90,6 @@
   .principle svg { margin-top: 3rem; }
   .about-portrait-stack { padding-left: 0; }
   .about-headshot { min-height: 520px; }
-  .about-signature { left: -0.5rem; font-size: 5rem; }
   .about-dogs-grid { grid-template-columns: 1fr; }
   .about-dogs-grid .image-frame:first-child { grid-column: auto; }
   .about-dogs-grid .image-frame { min-height: 330px; }

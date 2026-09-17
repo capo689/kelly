@@ -17,7 +17,7 @@ export default function Videos() {
             {videoTopics.map((video, index) => (
               <Reveal className={`video-card ${video.preserveSubject ? 'safe-image' : ''} ${index === 0 ? 'feature' : ''}`} key={video.title} delay={(index % 3) * 80}>
                 {video.preserveSubject && <span className="safe-image-backdrop" style={{ backgroundImage: `url(${video.image})` }} aria-hidden="true" />}
-                <img src={video.image} alt="" loading="lazy" />
+                <img src={video.image} alt={`${video.title} video preview`} loading="lazy" />
                 <div className="video-card-wash" />
                 <span className="video-play"><Play fill="currentColor" /></span>
                 <div className="video-card-copy"><span>{video.subtitle}</span><h3>{video.title}</h3><p>Film coming soon</p></div>
