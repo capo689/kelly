@@ -1,6 +1,6 @@
 import { communityRoutes } from '../data/communityData'
 
-export const SITE_URL = (import.meta.env?.VITE_SITE_URL || 'https://kelly-six.vercel.app').replace(/\/$/, '')
+export const SITE_URL = (import.meta.env?.VITE_SITE_URL || 'https://www.kellymillerrealestate.com').replace(/\/$/, '')
 export const SITE_NAME = 'Kelly Miller Real Estate'
 
 const baseRoutes = [
