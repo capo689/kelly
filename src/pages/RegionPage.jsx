@@ -9,6 +9,7 @@ import ButtonLink from '../components/ButtonLink'
 import CommunityLinks from '../components/CommunityLinks'
 import FAQSection from '../components/FAQSection'
 import { communitiesByRegion } from '../data/communityData'
+import { heroVideos } from '../data/videoData'
 
 export default function RegionPage({ data }) {
   const regionKey = data.path === '/central-oregon' ? 'central' : 'coast'
@@ -23,7 +24,7 @@ export default function RegionPage({ data }) {
   ]
   return (
     <PageTransition>
-      <Hero eyebrow={data.eyebrow} title={data.title} copy={data.intro} image={data.hero} position={data.alignment} primary={{ label: data.cta, to: '/contact' }} compact />
+      <Hero eyebrow={data.eyebrow} title={data.title} copy={data.intro} image={data.hero} video={regionKey === 'central' ? heroVideos.central : undefined} position={data.alignment} primary={{ label: data.cta, to: '/contact' }} compact />
 
       <section className="section region-narrative">
         <div className="wrap">

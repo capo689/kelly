@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion'
 import ButtonLink from './ButtonLink'
+import HeroBackdrop from './HeroBackdrop'
 
-export default function Hero({ eyebrow, title, copy, image, imageRight, position = 'center', primary, secondary, credit, compact = false, referenceSpacing = false }) {
+export default function Hero({ eyebrow, title, copy, image, imageRight, video, position = 'center', primary, secondary, credit, compact = false, referenceSpacing = false }) {
   const hasActions = Boolean(primary || secondary)
   return (
-    <section className={`page-hero ${compact ? 'compact' : ''} ${imageRight ? 'split' : ''} ${hasActions ? 'has-actions' : ''} ${referenceSpacing ? 'reference-spacing' : ''}`}>
-      <div className="hero-media" aria-hidden="true">
-        <div className="hero-image" style={{ backgroundImage: `url(${image})`, backgroundPosition: position }} />
-        {imageRight && <div className="hero-image right" style={{ backgroundImage: `url(${imageRight})` }} />}
-      </div>
+    <section className={`page-hero ${compact ? 'compact' : ''} ${imageRight ? 'split' : ''} ${video ? 'has-video' : ''} ${hasActions ? 'has-actions' : ''} ${referenceSpacing ? 'reference-spacing' : ''}`}>
+      <HeroBackdrop key={video?.src || image} image={image} imageRight={imageRight} position={position} video={video} />
       <div className="hero-wash" />
       <div className="wrap hero-content">
         <motion.div initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>

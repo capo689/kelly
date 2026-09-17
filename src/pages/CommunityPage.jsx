@@ -9,6 +9,8 @@ import ImageFrame from '../components/ImageFrame'
 import PageTransition from '../components/PageTransition'
 import Reveal from '../components/Reveal'
 import { communitiesByRegion } from '../data/communityData'
+import { featureVideos, heroVideos } from '../data/videoData'
+import VideoFrame from '../components/VideoFrame'
 
 export default function CommunityPage({ data }) {
   const hub = data.region === 'central'
@@ -18,7 +20,7 @@ export default function CommunityPage({ data }) {
 
   return (
     <PageTransition>
-      <Hero eyebrow={data.eyebrow} title={data.title} copy={data.answer} image={data.hero} position={data.position} primary={{ label: `Talk About ${data.name}`, to: '/contact' }} credit={data.heroCredit} compact />
+      <Hero eyebrow={data.eyebrow} title={data.title} copy={data.answer} image={data.hero} video={data.slug === 'bend' ? heroVideos.bend : undefined} position={data.position} primary={{ label: `Talk About ${data.name}`, to: '/contact' }} credit={data.heroCredit} compact />
 
       <div className="wrap community-breadcrumb-wrap">
         <Breadcrumbs items={[hub, { label: data.name }]} />
@@ -33,7 +35,7 @@ export default function CommunityPage({ data }) {
             {data.overview.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             <ButtonLink to="/contact" variant="dark">Plan a Local Tour</ButtonLink>
           </Reveal>
-          <ImageFrame src={data.featureImage || data.hero} alt={data.imageAlt || `${data.name}, Oregon landscape and real estate lifestyle`} position={data.featurePosition || data.position} preserveSubject={data.preserveSubject} />
+          {data.slug === 'bend' ? <VideoFrame video={featureVideos.bend} /> : <ImageFrame src={data.featureImage || data.hero} alt={data.imageAlt || `${data.name}, Oregon landscape and real estate lifestyle`} position={data.featurePosition || data.position} preserveSubject={data.preserveSubject} />}
         </div>
       </section>
 

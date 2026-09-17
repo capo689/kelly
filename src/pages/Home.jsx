@@ -9,6 +9,7 @@ import RegionCard from '../components/RegionCard'
 import CTASection from '../components/CTASection'
 import ButtonLink from '../components/ButtonLink'
 import { regionCards } from '../data/siteData'
+import { heroVideos } from '../data/videoData'
 
 const values = [
   { icon: Mountain, title: 'Oregon roots', copy: 'A native Oregonian with a lifelong connection to the mountains, forests, and coast.' },
@@ -25,6 +26,7 @@ export default function Home() {
         title="Find Your Place in Oregon"
         copy="Central Oregon and Central Oregon Coast real estate, from mountain communities to the rugged Pacific shoreline."
         image="/media/IMG_1895.webp"
+        video={heroVideos.home}
         imageRight="/media/IMG_2514.webp"
         primary={{ label: 'Find a Home', to: '/find-a-home' }}
         secondary={{ label: 'Meet Kelly', to: '/about-me' }}
