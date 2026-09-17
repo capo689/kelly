@@ -11,8 +11,7 @@ export default function ContactForm({ appointment = false }) {
         <label className="full"><span>Preferred community or region</span><input type="text" name="region" placeholder="Central Oregon, the Coast, or a specific community" /></label>
         <label className="full"><span>{appointment ? 'What would you like to discuss?' : 'Message'}</span><textarea name="message" rows="6" placeholder="Tell Kelly what you have in mind" /></label>
       </div>
-      <button type="button" className="form-button" aria-describedby="form-note">{appointment ? 'Send Request' : 'Send Message'}<ArrowUpRight /></button>
-      <p className="form-note" id="form-note">Design preview only. Form delivery will be connected in the next phase.</p>
+      <button type="button" className="form-button">{appointment ? 'Send Request' : 'Send Message'}<ArrowUpRight /></button>
     </form>
   )
 }
