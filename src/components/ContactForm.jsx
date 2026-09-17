@@ -2,6 +2,7 @@ import { useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { contact } from '../data/siteData'
+import { FORM_ENDPOINT, FORM_AJAX_ENDPOINT, formDeliveryFields, assertSubmissionAccepted } from '../data/formDelivery'
 
 export default function ContactForm({ appointment = false }) {
   const noteId = useId()
@@ -18,15 +19,14 @@ export default function ContactForm({ appointment = false }) {
     setStatus('sending')
     setError('')
     try {
-      const response = await fetch('https://formsubmit.co/ajax/kellymiller.realestate@gmail.com', {
+      const response = await fetch(FORM_AJAX_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...fields, _subject: appointment ? 'Kelly Miller — Appointment request' : 'Kelly Miller — Website inquiry', _template: 'table', _url: `https://www.kellymillerrealestate.com/${appointment ? 'book-appointment' : 'contact'}`, form: appointment ? 'Book an Appointment' : 'Contact' }),
+        body: JSON.stringify({ ...fields, ...formDeliveryFields(appointment) }),
         signal: AbortSignal.timeout(20000),
       })
       const result = await response.json()
-      if (/activat|confirm.*email/i.test(result.message || '')) throw new Error('Activation required')
-      if (!response.ok || ![true, 'true'].includes(result.success)) throw new Error('Send not confirmed')
+      assertSubmissionAccepted(response.ok, result)
       form.reset()
       setStatus('success')
     } catch (err) {
@@ -38,9 +38,8 @@ export default function ContactForm({ appointment = false }) {
   }
 
   return (
-    <form className="contact-form" method="post" action="https://formsubmit.co/kellymiller.realestate@gmail.com" onSubmit={submit} aria-busy={status === 'sending'} onChange={() => { if (status === 'success') setStatus('idle') }}>
-      <input type="hidden" name="_subject" value={appointment ? 'Kelly Miller — Appointment request' : 'Kelly Miller — Website inquiry'} />
-      <input type="hidden" name="_template" value="table" />
+    <form className="contact-form" method="post" action={FORM_ENDPOINT} onSubmit={submit} aria-busy={status === 'sending'} onChange={() => { if (status === 'success') setStatus('idle') }}>
+      {Object.entries(formDeliveryFields(appointment)).map(([name, value]) => <input key={name} type="hidden" name={name} value={value} />)}
       <fieldset className="contact-fields" disabled={status === 'sending'}>
         <legend className="sr-only">{appointment ? 'Appointment request' : 'Contact Kelly'}</legend>
         <div className="field-grid">
