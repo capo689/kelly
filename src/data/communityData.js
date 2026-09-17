@@ -98,7 +98,9 @@ export const communityPages = {
     slug: 'redmond', region: 'central', name: 'Redmond', eyebrow: 'Redmond, Oregon Real Estate',
     title: 'Homes and Opportunity in Redmond, Oregon',
     answer: 'Redmond offers a practical Central Oregon home base with its own downtown, airport access, neighborhood choices, and convenient routes to Bend, Sisters, and regional recreation.',
-    hero: '/media/35-web-or-mls-63115-De-Haviland-St-127.webp', position: 'center 58%',
+    hero: '/media/redmond-downtown.webp', featureImage: '/media/35-web-or-mls-63115-De-Haviland-St-127.webp', position: 'center 50%',
+    heroCredit: { label: 'Gary Halvorson, Oregon State Archives · CC BY 4.0', url: 'https://commons.wikimedia.org/wiki/File:Redmond_-_DPLA_-_a4af9df0ef80067ab7f8c4fce840f91a.jpg' },
+    imageAlt: 'Residential property in Redmond, Oregon',
     overview: [
       'Redmond has grown into a community with a broad mix of established neighborhoods, newer housing, local businesses, and regional services. For many buyers, its location and airport access are as important as the home itself.',
       'The search should still be personal. Consider how often you will travel to Bend or Sisters, whether you want an established street or newer neighborhood, and how much yard, garage, storage, and maintenance fit your plans.',

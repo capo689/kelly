@@ -18,7 +18,7 @@ export default function CommunityPage({ data }) {
 
   return (
     <PageTransition>
-      <Hero eyebrow={data.eyebrow} title={data.title} copy={data.answer} image={data.hero} position={data.position} primary={{ label: `Talk About ${data.name}`, to: '/contact' }} compact />
+      <Hero eyebrow={data.eyebrow} title={data.title} copy={data.answer} image={data.hero} position={data.position} primary={{ label: `Talk About ${data.name}`, to: '/contact' }} credit={data.heroCredit} compact />
 
       <div className="wrap community-breadcrumb-wrap">
         <Breadcrumbs items={[hub, { label: data.name }]} />

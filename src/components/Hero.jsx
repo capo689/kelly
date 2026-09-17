@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import ButtonLink from './ButtonLink'
 
-export default function Hero({ eyebrow, title, copy, image, imageRight, position = 'center', primary, secondary, compact = false }) {
+export default function Hero({ eyebrow, title, copy, image, imageRight, position = 'center', primary, secondary, credit, compact = false }) {
   return (
     <section className={`page-hero ${compact ? 'compact' : ''} ${imageRight ? 'split' : ''}`}>
       <div className="hero-media" aria-hidden="true">
@@ -22,6 +22,7 @@ export default function Hero({ eyebrow, title, copy, image, imageRight, position
           )}
         </motion.div>
       </div>
+      {credit && <a className="hero-credit" href={credit.url} target="_blank" rel="noreferrer">Photo: {credit.label}</a>}
     </section>
   )
 }
