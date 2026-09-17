@@ -35,7 +35,6 @@
   .region-story-card.offset { margin-top: 0; }
   .seller-step .image-frame, .coming-soon-image, .sign-stage { height: 460px; min-height: 460px; }
   .questions-section .asym-grid { grid-template-columns: 1fr; }
-  .map-card { min-height: 440px; }
   .service-feature, .service-feature .image-frame { min-height: 650px; }
   .about-portrait-stack { padding-left: 2rem; }
   .about-dogs-grid { grid-template-columns: 1fr 1fr; }

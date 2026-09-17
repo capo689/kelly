@@ -370,58 +370,26 @@
   text-align: center;
 }
 
-.map-card {
-  position: relative;
-  min-height: 480px;
-  overflow: hidden;
-  background: var(--deep);
-  box-shadow: var(--shadow);
+.find-intro .section-heading {
+  margin-bottom: 0;
 }
 
-.map-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.24;
-  background-image: radial-gradient(circle at center, rgba(255,255,255,0.8) 1px, transparent 1.5px);
-  background-size: 28px 28px;
+.find-intro-photo {
+  min-height: 0;
 }
 
-.map-line {
-  position: absolute;
-  left: 24%;
-  right: 23%;
-  top: 50%;
-  height: 1px;
-  background: var(--gold);
-  transform: rotate(-18deg);
+.find-intro-photo img {
+  display: block;
+  height: auto;
+  aspect-ratio: 4 / 3;
 }
 
-.map-point {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: var(--white);
-  text-transform: uppercase;
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+@media (min-width: 901px) {
+  .find-intro .asym-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: center;
+  }
 }
-
-.map-point svg {
-  width: 44px;
-  height: 44px;
-  padding: 0.65rem;
-  color: var(--deep);
-  background: var(--gold);
-  border-radius: 50%;
-}
-
-.map-point.mountains { left: 12%; top: 23%; }
-.map-point.coast { right: 9%; bottom: 20%; }
-.map-pin { position: absolute; left: 52%; top: 47%; color: var(--gold); }
 
 .search-dialogue {
   background: var(--paper);

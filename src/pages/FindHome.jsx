@@ -1,5 +1,5 @@
-import { MapPin, Mountain, Waves } from 'lucide-react'
 import Hero from '../components/Hero'
+import ImageFrame from '../components/ImageFrame'
 import PageTransition from '../components/PageTransition'
 import SectionHeading from '../components/SectionHeading'
 import RegionCard from '../components/RegionCard'
@@ -25,12 +25,11 @@ export default function FindHome() {
       <section className="section find-intro">
         <div className="wrap asym-grid">
           <SectionHeading kicker="Where would you like to begin?" title="One Oregon. Two extraordinary ways to live." copy="Start with the landscape that draws you in, then let the search become as specific and personal as your life." />
-          <Reveal direction="right" className="map-card">
-            <div className="map-line" />
-            <div className="map-point mountains"><Mountain /><span>Central Oregon</span></div>
-            <div className="map-point coast"><Waves /><span>Central Coast</span></div>
-            <MapPin className="map-pin" />
-          </Reveal>
+          <ImageFrame
+            className="find-intro-photo"
+            src="/media/video/alpine-lake-snowy-peaks-water-level.webp"
+            alt="Snow-covered Cascade peaks above an evergreen-lined Oregon lake"
+          />
         </div>
       </section>
 
