@@ -63,7 +63,7 @@
   h1 { font-size: clamp(3rem, 14vw, 5rem); }
   h2 { font-size: clamp(2.2rem, 11vw, 3.8rem); }
   p { font-size: 0.98rem; }
-  .brand-copy small { display: none; }
+  .brand-copy small { display: block; font-size: 0.52rem; letter-spacing: 0.04em; margin-top: 0.3rem; }
   .site-header.is-scrolled { height: 68px; }
   .hero-content { padding-top: 4rem; }
   .hero-actions { align-items: stretch; flex-direction: column; max-width: 280px; }

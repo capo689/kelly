@@ -3,7 +3,7 @@ export const communityPages = {
     slug: 'bend', region: 'central', name: 'Bend', eyebrow: 'Bend, Oregon Real Estate',
     title: 'Homes and Everyday Life in Bend, Oregon',
     answer: 'Bend works well for buyers who want daily access to trails, the Deschutes River, restaurants, shops, and year-round recreation without giving up the conveniences of a growing city.',
-    hero: '/media/LP3.webp', position: 'center 52%',
+    hero: '/media/kelly-updates/bend-river-aerial.webp', thumbnail: '/media/kelly-updates/bend-river-aerial-thumb.webp', heroAlt: 'Aerial view of Bend and the Deschutes River', position: 'center 52%',
     overview: [
       'Bend brings together high-desert scenery, an active outdoor culture, and the services of Central Oregon’s largest city. The experience can change considerably from one part of town to another, from established neighborhoods near downtown and the Old Mill District to quieter residential areas at the edges of the city.',
       'The right Bend home search begins with the rhythm you want. Some buyers prioritize a short trip to trails or the river. Others want space, newer construction, a low-maintenance property, or convenient access to work, schools, shopping, and medical services.',
@@ -25,7 +25,7 @@ export const communityPages = {
     slug: 'sisters', region: 'central', name: 'Sisters', eyebrow: 'Sisters, Oregon Real Estate',
     title: 'Mountain-Town Living in Sisters, Oregon',
     answer: 'Sisters appeals to buyers looking for a smaller Central Oregon community with Cascade views, a distinct downtown, and close access to trails, forests, and year-round recreation.',
-    hero: '/media/IMG_1131.webp', position: 'center 55%',
+    hero: '/media/kelly-updates/sisters-barn-mountains.webp', thumbnail: '/media/kelly-updates/sisters-barn-mountains-thumb.webp', heroAlt: 'A barn and snow-covered Cascade peaks near Sisters', position: 'center 45%',
     overview: [
       'Sisters has a strong sense of place. Its compact downtown, Western-inspired character, mountain setting, and connection to the surrounding forest create a different pace from Bend while keeping Central Oregon recreation close at hand.',
       'A Sisters search may include an in-town home near shops and community activities, a low-maintenance base for outdoor adventures, or a property with more room outside town. Water, wells, septic systems, wildfire considerations, road access, and land-use details can become important as a search moves beyond city services.',
@@ -43,7 +43,7 @@ export const communityPages = {
     slug: 'tumalo', region: 'central', name: 'Tumalo', eyebrow: 'Tumalo, Oregon Real Estate',
     title: 'Space, Access, and Rural Character in Tumalo',
     answer: 'Tumalo is worth considering for buyers who want a more rural Central Oregon setting with convenient access to Bend, Sisters, the Deschutes River, and the surrounding high desert.',
-    hero: '/media/Broken_Top1.webp', position: 'center 58%',
+    hero: '/media/kelly-updates/tumalo-mountain-view.webp', thumbnail: '/media/kelly-updates/tumalo-mountain-view-thumb.webp', heroAlt: 'Cascade mountain views at sunset in the Tumalo area', position: 'center 45%',
     overview: [
       'Tumalo sits between Bend and Sisters and offers a mix of rural character, open views, equestrian possibilities, and small-community convenience. Properties can vary widely in acreage, improvements, utilities, water arrangements, and permitted uses.',
       'Because two homes with similar acreage can have very different infrastructure and restrictions, careful due diligence matters. A thoughtful search looks beyond the house to wells, septic, irrigation, fencing, access, outbuildings, zoning, and the ongoing work a property requires.',
@@ -61,7 +61,7 @@ export const communityPages = {
     slug: 'black-butte-ranch', region: 'central', name: 'Black Butte Ranch', eyebrow: 'Black Butte Ranch Real Estate',
     title: 'Homes and Getaways at Black Butte Ranch',
     answer: 'Black Butte Ranch is a resort community near Sisters for buyers drawn to mountain scenery, golf, trails, recreation, and a managed community setting.',
-    hero: '/media/BTGooseCreek_1.webp', position: 'center 55%',
+    hero: '/media/kelly-updates/black-butte-ranch-lodge.webp', thumbnail: '/media/kelly-updates/black-butte-ranch-lodge-thumb.webp', heroAlt: 'Sunlight through the trees beside a lodge at Black Butte Ranch', position: 'center 55%',
     overview: [
       'Black Butte Ranch offers a distinctive version of Central Oregon living. The landscape, recreation, and community amenities create strong appeal for full-time residents and second-home owners, but ownership details deserve close review.',
       'A useful comparison includes property type, location within the Ranch, condition, planned maintenance, association costs, use rules, rental considerations, and proximity to the amenities that matter most to you. The best fit is not simply the most impressive view. It is the property that supports how you will actually use it.',
@@ -118,7 +118,7 @@ export const communityPages = {
     slug: 'newport', region: 'coast', name: 'Newport', eyebrow: 'Newport, Oregon Real Estate',
     title: 'Coastal Homes and Everyday Life in Newport',
     answer: 'Newport suits buyers who want a working coastal city with beaches, the bayfront, restaurants, shops, marine activity, and more everyday services than many smaller Oregon Coast communities.',
-    hero: '/media/IMG_1025.webp', position: 'center 48%', preserveSubject: true,
+    hero: '/media/kelly-updates/newport-marina.webp', thumbnail: '/media/kelly-updates/newport-marina-thumb.webp', heroAlt: 'Newport marina with boats and the Yaquina Bay Bridge', featureImage: '/media/kelly-updates/newport-yaquina-head.webp', imageAlt: 'Yaquina Head lighthouse and the Newport coastline', featurePosition: 'center 60%', position: 'center 60%',
     overview: [
       'Newport is not one single coastal experience. The bayfront, Nye Beach, residential neighborhoods, and areas south of the bridge each have a different relationship to the ocean, wind, traffic, services, and views.',
       'A useful Newport search starts by deciding whether you want walkability, an ocean or bay view, beach access, quieter residential surroundings, or proximity to work and services. Coastal construction, exterior exposure, drainage, insurance, and elevation deserve careful attention wherever you look.',
@@ -136,7 +136,7 @@ export const communityPages = {
     slug: 'waldport', region: 'coast', name: 'Waldport', eyebrow: 'Waldport, Oregon Real Estate',
     title: 'A Relaxed Coastal Home Base in Waldport',
     answer: 'Waldport offers a quieter central-coast setting shaped by Alsea Bay, sandy shoreline, outdoor recreation, and a smaller-community pace.',
-    hero: '/media/IMG_2514.webp', position: 'center 48%',
+    hero: '/media/kelly-updates/waldport-alsea-bay.webp', thumbnail: '/media/kelly-updates/waldport-alsea-bay-thumb.webp', heroAlt: 'Aerial view of Alsea Bay and the shoreline at Waldport', position: 'center 50%',
     overview: [
       'Waldport can feel both open and tucked away. The bay, bridge, beaches, and forested surroundings create varied settings within a relatively compact area. Buyers may compare in-town convenience, hillside views, beach proximity, and properties farther from Highway 101.',
       'Coastal conditions are specific to each site. Elevation, drainage, wind exposure, road access, water and septic systems, maintenance history, insurance, and official hazard maps should all be part of a well-prepared search.',
@@ -154,7 +154,7 @@ export const communityPages = {
     slug: 'yachats', region: 'coast', name: 'Yachats', eyebrow: 'Yachats, Oregon Real Estate',
     title: 'Homes Between Forest and Ocean in Yachats',
     answer: 'Yachats appeals to buyers who want dramatic shoreline, forested trails, a walkable village core, and a distinctly small-scale coastal community.',
-    hero: '/media/IMG_1089.webp', position: 'center 58%',
+    hero: '/media/24_Horizon_Hill_Rd_lot.webp', heroAlt: 'Homes and the coastline in Yachats, Oregon', position: 'center 35%',
     overview: [
       'Yachats is shaped by the meeting of forest, rock, and ocean. Homes can sit close to the village, above the shoreline, or in wooded settings where views, sun, wind, access, and maintenance differ from one property to the next.',
       'The most useful Yachats search is highly site-specific. Buyers should test the route, understand the slope and drainage, assess coastal exposure, confirm services, and review official hazard information before deciding that a particular view or setting is the right one.',
@@ -172,7 +172,8 @@ export const communityPages = {
     slug: 'seal-rock', region: 'coast', name: 'Seal Rock', eyebrow: 'Seal Rock, Oregon Real Estate',
     title: 'Rugged Coastline and Quiet Living in Seal Rock',
     answer: 'Seal Rock is a fit for buyers drawn to a quieter stretch of the central Oregon coast with dramatic rock formations, beach access, forest, and room between larger communities.',
-    hero: '/media/24_Horizon_Hill_Rd_lot.webp', position: 'center 58%',
+    hero: '/media/kelly-updates/seal-rock-state-park.webp', thumbnail: '/media/kelly-updates/seal-rock-state-park-thumb.webp', heroAlt: 'Seal Rock and the beach at Seal Rock State Recreation Site', position: 'center 50%',
+    heroCredit: { label: 'Ian Poellet · CC BY-SA 4.0 · resized/cropped', url: 'https://commons.wikimedia.org/wiki/File:Seal_Rock_and_beach_-_Seal_Rock_SRS_Oregon.jpg', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
     overview: [
       'Seal Rock sits between Newport and Waldport and offers a more dispersed coastal experience. Properties may be near the shoreline, tucked into forest, or positioned for views, with meaningful differences in access, utilities, exposure, and maintenance.',
       'Because the area is less urban, a search should include the practical details of daily life. Buyers should confirm water and septic systems where applicable, internet and cellular service, road conditions, emergency access, insurance, and the time required to reach services.',

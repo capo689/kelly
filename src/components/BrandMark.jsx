@@ -13,6 +13,7 @@ export default function BrandMark({ compact = false, inverse = false }) {
       <span className="brand-copy">
         <b>Cascades to Coast</b>
         <small>Kelly Miller · Oregon Realtor®</small>
+        <small className="brand-license">Oregon Lic. #201246475</small>
       </span>
     </Link>
   )

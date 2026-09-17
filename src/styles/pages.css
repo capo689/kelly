@@ -253,11 +253,13 @@
 .sign-stage {
   display: grid;
   place-items: center;
-  background: var(--blue);
+  background: var(--cream);
+  border: 1px solid var(--line);
 }
 
 .sign-stage img {
-  width: 92%;
+  width: 84%;
+  filter: drop-shadow(0 12px 18px rgba(24, 50, 62, 0.16));
 }
 
 .coming-soon-image {
@@ -620,6 +622,23 @@
 .future-topic img { width: 190px; height: 120px; object-fit: cover; }
 .future-topic h3, .future-topic p { margin-bottom: 0.3rem; }
 .future-topic > svg { color: var(--gold); }
+
+.community-directory-group { margin-top: 4rem; }
+.community-directory-heading { font-size: clamp(2rem, 4vw, 3rem); }
+.directory-photo-credit { margin-top: 2rem; font-size: 0.72rem; }
+.journal-intro-heading { max-width: 880px; margin-bottom: 4rem; }
+.journal-intro-heading > p { max-width: 620px; }
+.journal-landscapes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); }
+.journal-landscape .image-frame { aspect-ratio: 3 / 4; min-height: 0; }
+.journal-landscape-copy { padding-top: 2.5rem; }
+.journal-landscape-copy h3 { font-size: clamp(2rem, 3vw, 3rem); }
+.journal-intro-close { max-width: 800px; margin: 4rem auto 0; padding-top: 3rem; border-top: 1px solid var(--line); }
+.photo-license { font-size: 0.72rem; }
+
+@media (max-width: 700px) {
+  .journal-landscapes { grid-template-columns: 1fr; gap: 3.5rem; }
+  .journal-intro-heading { margin-bottom: 2.5rem; }
+}
 
 .article-lead { padding: clamp(6rem, 11vw, 11rem) 0; max-width: 900px; }
 .article-deck { color: var(--ink); font-family: var(--serif); font-size: clamp(2rem, 4vw, 4.3rem); line-height: 1.14; }

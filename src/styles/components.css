@@ -78,6 +78,8 @@
   opacity: 0.76;
 }
 
+.brand-copy .brand-license { margin-top: 0.35rem; letter-spacing: 0.08em; }
+
 .desktop-nav {
   display: flex;
   align-items: center;

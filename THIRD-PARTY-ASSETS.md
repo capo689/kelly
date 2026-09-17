@@ -30,3 +30,18 @@
 - License: Creative Commons Attribution 4.0 International, CC BY 4.0
 - Attribution displayed on the Redmond page: Gary Halvorson, Oregon State Archives
 - Modification: Converted from JPEG to WebP for web delivery and displayed with responsive cropping
+
+## Seal Rock
+
+### `public/media/kelly-updates/seal-rock-state-park.webp` and thumbnail
+
+- Title: Seal Rock and beach - Seal Rock SRS Oregon
+- Creator: Ian Poellet
+- Source: https://commons.wikimedia.org/wiki/File:Seal_Rock_and_beach_-_Seal_Rock_SRS_Oregon.jpg
+- License: Creative Commons Attribution-ShareAlike 4.0 International, https://creativecommons.org/licenses/by-sa/4.0/
+- Modification: Resized, converted to WebP, and responsively cropped. These image derivatives remain available under CC BY-SA 4.0.
+- Credit, source, and license links appear in Find a Home and the Seal Rock guide.
+
+## Kelly’s September 17, 2026 photo updates
+
+Client-supplied images are stored in `public/media/kelly-updates/` with descriptive filenames. Town assignments follow Kelly’s labeled email attachments. The existing Horizon Hill coastal image moves from Seal Rock to Yachats per her email. Newport uses the supplied marina photo with Yaquina Head as its supporting landscape. About uses Kelly-Miller-2; Journal uses Kiva with Three Sisters and Kiva in Yachats. Original files are retained outside the repository in `../source-photos/september-updates/`.

@@ -24,6 +24,7 @@ export default function CommunityPage({ data }) {
 
       <div className="wrap community-breadcrumb-wrap">
         <Breadcrumbs items={[hub, { label: data.name }]} />
+        {data.heroCredit?.licenseUrl && <p className="photo-license">Photo: <a href={data.heroCredit.url}>{data.heroCredit.label}</a> · <a href={data.heroCredit.licenseUrl}>License</a></p>}
       </div>
 
       <section className="section community-answer-section">

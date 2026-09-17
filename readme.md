@@ -26,4 +26,4 @@ The repository includes a Vercel rewrite so client-side routes resolve correctly
 - `public/media`: optimized client photography
 - `public/brand`: supplied brand graphics
 
-Forms are intentionally presentation-only in this design phase. Form processing and SEO/AEO implementation are reserved for a later phase.
+Both inquiry forms use free FormSubmit delivery to Kelly. Recipient activation is required before email delivery; see FORM-DELIVERY.md. The production build prerenders page content and SEO metadata.

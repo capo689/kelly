@@ -25,7 +25,8 @@ export default function Footer() {
           <Link to="/central-oregon">Central Oregon</Link>
           <Link to="/central-oregon-coast">Oregon Coast</Link>
           <Link to="/about-me">About Kelly</Link>
-          <Link to="/blog">Local Guides</Link>
+          <Link to="/find-a-home#regions">Community Guides</Link>
+          <Link to="/blog">Journal</Link>
         </div>
         <div className="footer-col footer-contact">
           <h3>Connect</h3>

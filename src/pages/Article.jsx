@@ -74,7 +74,7 @@ export default function Article() {
         ))}
         <section className="article-close">
           <div className="wrap">
-            <Reveal><div className="section-kicker">Your Cascades-to-Coast connection</div><h2>Because sometimes the perfect Oregon lifestyle is not about choosing between the mountains and the ocean. It is about having both.</h2><p>Kelly Miller, REALTOR®/Broker · Kelly Miller Real Estate</p></Reveal>
+            <Reveal><div className="section-kicker">Your Cascades-to-Coast connection</div><h2>Because sometimes the perfect Oregon lifestyle is not about choosing between the mountains and the ocean. It is about having both.</h2><p>Kelly Miller, REALTOR®/Broker · Oregon Lic. #201246475 · Kelly Miller Real Estate</p></Reveal>
           </div>
         </section>
       </article>
