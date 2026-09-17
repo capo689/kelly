@@ -321,6 +321,10 @@
   padding-top: var(--header-h);
 }
 
+.page-hero.has-actions:not(.reference-spacing) .hero-content {
+  padding-bottom: clamp(4.75rem, 9svh, 6.5rem);
+}
+
 .hero-content > div {
   max-width: 860px;
 }

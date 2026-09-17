@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
 import ButtonLink from './ButtonLink'
 
-export default function Hero({ eyebrow, title, copy, image, imageRight, position = 'center', primary, secondary, credit, compact = false }) {
+export default function Hero({ eyebrow, title, copy, image, imageRight, position = 'center', primary, secondary, credit, compact = false, referenceSpacing = false }) {
+  const hasActions = Boolean(primary || secondary)
   return (
-    <section className={`page-hero ${compact ? 'compact' : ''} ${imageRight ? 'split' : ''}`}>
+    <section className={`page-hero ${compact ? 'compact' : ''} ${imageRight ? 'split' : ''} ${hasActions ? 'has-actions' : ''} ${referenceSpacing ? 'reference-spacing' : ''}`}>
       <div className="hero-media" aria-hidden="true">
         <div className="hero-image" style={{ backgroundImage: `url(${image})`, backgroundPosition: position }} />
         {imageRight && <div className="hero-image right" style={{ backgroundImage: `url(${imageRight})` }} />}
@@ -14,7 +15,7 @@ export default function Hero({ eyebrow, title, copy, image, imageRight, position
           <div className="hero-kicker"><span />{eyebrow}</div>
           <h1>{title}</h1>
           {copy && <p>{copy}</p>}
-          {(primary || secondary) && (
+          {hasActions && (
             <div className="hero-actions">
               {primary && <ButtonLink to={primary.to}>{primary.label}</ButtonLink>}
               {secondary && <ButtonLink to={secondary.to} variant="outline">{secondary.label}</ButtonLink>}

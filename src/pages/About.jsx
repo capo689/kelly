@@ -9,7 +9,7 @@ import CTASection from '../components/CTASection'
 export default function About() {
   return (
     <PageTransition>
-      <Hero eyebrow="Meet Kelly Miller" title="Oregon Is Home" copy="Native Oregonian. Central Oregon and Central Oregon Coast real estate professional. Former firefighter and EMT." image="/media/KellyM-PhotosxKristin-1.webp" position="center 34%" primary={{ label: 'Start a Conversation', to: '/contact' }} compact />
+      <Hero eyebrow="Meet Kelly Miller" title="Oregon Is Home" copy="Native Oregonian. Central Oregon and Central Oregon Coast real estate professional. Former firefighter and EMT." image="/media/KellyM-PhotosxKristin-1.webp" position="center 34%" primary={{ label: 'Start a Conversation', to: '/contact' }} referenceSpacing compact />
 
       <section className="section about-story">
         <div className="wrap grid-2 about-lead">
