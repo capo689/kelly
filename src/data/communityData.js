@@ -79,7 +79,8 @@ export const communityPages = {
     slug: 'camp-sherman', region: 'central', name: 'Camp Sherman', eyebrow: 'Camp Sherman, Oregon Real Estate',
     title: 'Cabins and Homes Near the Metolius River',
     answer: 'Camp Sherman offers a quiet forest setting near the Metolius River for buyers who value nature, privacy, recreation, and a distinctly unplugged Central Oregon experience.',
-    hero: '/media/IMG_7897.webp', position: 'center 55%',
+    hero: '/media/camp-sherman-metolius-fall.webp', featureImage: '/media/camp-sherman-metolius-river.webp', position: 'center 52%',
+    featurePosition: 'center 52%', imageAlt: 'The Metolius River flowing through ponderosa forest near Camp Sherman, Oregon',
     overview: [
       'Camp Sherman feels removed from the pace of town. Forest roads, river access, cabins, and the surrounding landscape are central to the experience. Inventory can be limited, and the details of access, utilities, land status, and year-round use may vary significantly.',
       'Buyers should approach each property on its own terms. A beautiful cabin may also require careful review of winter access, internet and cellular service, water and septic systems, insurance, maintenance, and any restrictions tied to the land or structure.',

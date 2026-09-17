@@ -33,7 +33,7 @@ export default function CommunityPage({ data }) {
             {data.overview.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             <ButtonLink to="/contact" variant="dark">Plan a Local Tour</ButtonLink>
           </Reveal>
-          <ImageFrame src={data.hero} alt={`${data.name}, Oregon landscape and real estate lifestyle`} position={data.position} preserveSubject={data.preserveSubject} />
+          <ImageFrame src={data.featureImage || data.hero} alt={data.imageAlt || `${data.name}, Oregon landscape and real estate lifestyle`} position={data.featurePosition || data.position} preserveSubject={data.preserveSubject} />
         </div>
       </section>
 
