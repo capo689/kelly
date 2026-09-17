@@ -45,7 +45,7 @@ export default function ListWithMe() {
             </Reveal>
             <Reveal className="seller-step coming-soon" delay={200}>
               <div className="seller-step-number">03</div>
-              <div className="coming-soon-image"><img src="/media/Main_front.webp" alt="Home exterior" loading="lazy" /><span>Coming Soon</span></div>
+              <div className="coming-soon-image"><img src="/media/Main_front.webp" alt="Example home exterior" loading="lazy" /><span>Your home next</span></div>
               <h3>Next</h3>
               <p>This could be your home going on the market next.</p>
             </Reveal>

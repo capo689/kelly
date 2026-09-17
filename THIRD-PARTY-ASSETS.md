@@ -45,3 +45,7 @@
 ## Kelly’s September 17, 2026 photo updates
 
 Client-supplied images are stored in `public/media/kelly-updates/` with descriptive filenames. Town assignments follow Kelly’s labeled email attachments. The existing Horizon Hill coastal image moves from Seal Rock to Yachats per her email. Newport uses the supplied marina photo with Yaquina Head as its supporting landscape. About uses Kelly-Miller-2; Journal uses Kiva with Three Sisters and Kiva in Yachats. Original files are retained outside the repository in `../source-photos/september-updates/`.
+
+## Self-hosted fonts (September 17, 2026)
+
+Montserrat and Cormorant Garamond Latin WOFF2 files come from the official `@fontsource/montserrat` and `@fontsource/cormorant-garamond` npm packages, version 5.3.0. Both use the SIL Open Font License 1.1; their copyright and license notices are retained in `public/fonts/`. Fonts are served from this website instead of requesting Google Fonts.

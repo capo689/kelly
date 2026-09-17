@@ -19,7 +19,7 @@ export default function SEO() {
     document.title = seo.title
     setMeta('name', 'description', seo.description)
     setMeta('name', 'robots', seo.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large')
-    setMeta('property', 'og:type', 'website')
+    setMeta('property', 'og:type', seo.path.includes('life-with-two-homes') ? 'article' : 'website')
     setMeta('property', 'og:site_name', SITE_NAME)
     setMeta('property', 'og:title', seo.title)
     setMeta('property', 'og:description', seo.description)

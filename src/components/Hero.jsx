@@ -9,7 +9,7 @@ export default function Hero({ eyebrow, title, copy, image, imageRight, video, p
       <HeroBackdrop key={video?.src || image} image={image} imageRight={imageRight} position={position} video={video} />
       <div className="hero-wash" />
       <div className="wrap hero-content">
-        <motion.div initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
+        <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
           <div className="hero-kicker"><span />{eyebrow}</div>
           <h1>{title}</h1>
           {copy && <p>{copy}</p>}

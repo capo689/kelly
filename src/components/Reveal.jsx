@@ -4,7 +4,8 @@ export default function Reveal({ children, as: Tag = 'div', direction = 'up', de
   const ref = useRef(null)
   useEffect(() => {
     const node = ref.current
-    if (!node) return undefined
+    if (!node || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+    node.classList.add('will-reveal')
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         node.classList.add('is-visible')

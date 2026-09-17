@@ -6,7 +6,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = resolve(root, 'dist')
 const serverEntry = pathToFileURL(resolve(root, 'dist-ssr/entry-server.js')).href
-const { getSeo, indexableRoutes, render, SITE_NAME, SITE_URL } = await import(serverEntry)
+const { getSeo, indexableRoutes, siteRoutes, render, SITE_NAME, SITE_URL } = await import(serverEntry)
 const template = await readFile(resolve(dist, 'index.html'), 'utf8')
 
 function escapeAttribute(value) {
@@ -15,13 +15,13 @@ function escapeAttribute(value) {
 
 function headMarkup(seo) {
   const robots = seo.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'
-  const schema = seo.schemas.map((item) => `<script type="application/ld+json">${JSON.stringify(item).replaceAll('<', '\\u003c')}</script>`).join('\n    ')
+  const schema = seo.schemas.map((item) => `<script type="application/ld+json" data-route-schema="true">${JSON.stringify(item).replaceAll('<', '\\u003c')}</script>`).join('\n    ')
   return `
     <title>${escapeAttribute(seo.title)}</title>
     <meta name="description" content="${escapeAttribute(seo.description)}" />
     <meta name="robots" content="${robots}" />
     <link rel="canonical" href="${seo.canonical}" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="${seo.path.includes('life-with-two-homes') ? 'article' : 'website'}" />
     <meta property="og:site_name" content="${SITE_NAME}" />
     <meta property="og:title" content="${escapeAttribute(seo.title)}" />
     <meta property="og:description" content="${escapeAttribute(seo.description)}" />
@@ -52,7 +52,7 @@ async function writeRoute(path) {
   }
 }
 
-for (const route of indexableRoutes) await writeRoute(route.path)
+for (const route of siteRoutes) await writeRoute(route.path)
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

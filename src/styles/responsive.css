@@ -116,3 +116,12 @@
   .footer-fine { flex-direction: column; }
   .footer-orbit { display: none; }
 }
+
+@media (max-width: 900px) {
+  .header-inner { gap: 0.5rem; }
+  .brand-mark { gap: 0.5rem; }
+  .brand-emblem { width: 30px; height: 30px; }
+  .brand-copy small { font-size: 0.56rem; letter-spacing: 0.02em; margin-top: 0.25rem; }
+  .brand-copy .brand-brokerage { font-size: 0.6rem; }
+  .menu-toggle { margin-left: auto; }
+}

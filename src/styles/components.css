@@ -174,14 +174,16 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding-top: 2rem;
   padding-bottom: 3rem;
 }
 
 .mobile-menu-label,
 .section-kicker,
 .hero-kicker {
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.69rem;
   font-weight: 800;
   letter-spacing: 0.19em;
@@ -201,7 +203,7 @@
 }
 
 .mobile-menu-inner > a span {
-  color: var(--gold);
+  color: var(--accent-text);
   font-family: var(--sans);
   font-size: 0.63rem;
   letter-spacing: 0.12em;
@@ -209,7 +211,7 @@
 
 .mobile-menu-foot {
   margin-top: 2.5rem;
-  color: rgba(255,255,255,0.48);
+  color: rgba(255,255,255,0.75);
   text-transform: uppercase;
   font-size: 0.68rem;
   letter-spacing: 0.18em;
@@ -301,7 +303,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   transform: scale(1.02);
-  animation: heroDrift 18s ease-in-out infinite alternate;
+  /* Keep photography still; video backgrounds have their own pause control. */
 }
 
 .hero-image.right {
@@ -635,7 +637,7 @@
   overflow: hidden;
   padding: 6.5rem 0 2rem;
   color: rgba(255,255,255,0.66);
-  background: var(--blue);
+  background: var(--deep);
 }
 
 .footer-orbit {
@@ -737,3 +739,10 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+.brand-copy .brand-brokerage { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.035em; opacity: 1; }
+.footer-policies { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; padding-block: 1.25rem; }
+.footer-policies a { color: var(--white); font-size: 0.85rem; min-height: 32px; display: inline-flex; align-items: center; }
+
+/* A filtered ancestor constrains fixed-position descendants to the header. */
+.site-header.is-menu-open { backdrop-filter: none; background: var(--deep-2); }

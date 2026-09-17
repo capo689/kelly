@@ -4,6 +4,9 @@ export const SITE_URL = (import.meta.env?.VITE_SITE_URL || 'https://www.kellymil
 export const SITE_NAME = 'Kelly Miller Real Estate'
 
 const baseRoutes = [
+  ['/privacy', 'Privacy Notice | Kelly Miller Real Estate', 'How Kelly Miller’s website forms process your inquiry and deliver it by email, with contact details for privacy questions.', '/media/IMG_1895.webp'],
+  ['/terms', 'Website Terms | Kelly Miller Real Estate', 'Information about website content, property examples, inquiries and appointments with Kelly Miller at Fathom Realty Oregon, LLC.', '/media/IMG_1895.webp'],
+  ['/accessibility', 'Accessibility | Kelly Miller Real Estate', 'Accessibility features, improvement goals and direct contact options for help using Kelly Miller’s real-estate website.', '/media/IMG_1895.webp'],
   ['/', 'Central Oregon & Oregon Coast Real Estate | Kelly Miller', 'Explore Central Oregon and Central Oregon Coast real estate with Kelly Miller, an Oregon REALTOR®/Broker (Lic. #201246475) connecting the Cascades and the coast.', '/media/IMG_1895.webp'],
   ['/list-with-me', 'Sell Your Central Oregon or Coast Home | Kelly Miller', 'Thoughtful home-selling guidance for Central Oregon and the Central Oregon Coast, from preparation and positioning through closing.', '/media/Front_De_Haviland.webp'],
   ['/find-a-home', 'Find a Home in Central Oregon or on the Coast | Kelly Miller', 'Start a personal home search in Bend, Sisters, Black Butte Ranch, Newport, Waldport, Yachats, and communities between the Cascades and coast.', '/media/LP3.webp'],
@@ -21,6 +24,8 @@ const baseRoutes = [
 ]
 
 const staticSeo = Object.fromEntries(baseRoutes.map(([path, title, description, image]) => [path, { path, title, description, image }]))
+// Keep the unfinished testimonials page out of search until approved reviews exist.
+staticSeo['/testimonials'].noindex = true
 
 for (const community of communityRoutes) {
   staticSeo[community.path] = {
@@ -32,7 +37,8 @@ for (const community of communityRoutes) {
   }
 }
 
-export const indexableRoutes = Object.values(staticSeo)
+export const siteRoutes = Object.values(staticSeo)
+export const indexableRoutes = siteRoutes.filter((page) => !page.noindex)
 
 function absolute(path = '/') {
   return path.startsWith('http') ? path : `${SITE_URL}${path}`
@@ -49,7 +55,6 @@ function businessSchema() {
     image: absolute('/media/KellyM-PhotosxKristin-1.webp'),
     telephone: '+1-307-699-0494',
     email: 'kellymiller.realestate@gmail.com',
-    priceRange: '$$',
     description: 'Real estate guidance across Central Oregon and the Central Oregon Coast.',
     areaServed: ['Bend', 'Sisters', 'Tumalo', 'Black Butte Ranch', 'Camp Sherman', 'Redmond', 'Newport', 'Waldport', 'Yachats', 'Seal Rock'].map((name) => ({ '@type': 'Place', name })),
     founder: { '@type': 'Person', name: 'Kelly Miller', jobTitle: 'REALTOR®/Broker', identifier: 'Oregon License #201246475' },
@@ -91,11 +96,12 @@ export function getSeo(pathname = '/') {
     {
       '@context': 'https://schema.org', '@type': page.path.includes('life-with-two-homes') ? 'Article' : 'WebPage',
       '@id': `${canonical}#webpage`, url: canonical, name: page.title, description: page.description,
+      ...(page.path.includes('life-with-two-homes') ? { headline: 'Life With Two Homes: Mountain and Beach Living in Oregon', author: { '@type': 'Person', name: 'Kelly Miller', url: absolute('/about-me') } } : {}),
       isPartOf: { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: SITE_NAME, url: SITE_URL },
       about: { '@id': `${SITE_URL}/#real-estate-agent` },
       primaryImageOfPage: { '@type': 'ImageObject', url: absolute(page.image) },
     },
-    breadcrumbSchema(page),
+    ...(page.path === '/' ? [] : [breadcrumbSchema(page)]),
   ]
   if (page.community) {
     schemas.push({

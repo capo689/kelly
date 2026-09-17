@@ -1,4 +1,5 @@
 import { useId, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { contact } from '../data/siteData'
 
@@ -20,15 +21,16 @@ export default function ContactForm({ appointment = false }) {
       const response = await fetch('https://formsubmit.co/ajax/kellymiller.realestate@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...fields, _subject: appointment ? 'Kelly Miller — Appointment request' : 'Kelly Miller — Website inquiry', _template: 'table', _url: 'https://www.kellymillerrealestate.com/contact', form: appointment ? 'Book an Appointment' : 'Contact' }),
+        body: JSON.stringify({ ...fields, _subject: appointment ? 'Kelly Miller — Appointment request' : 'Kelly Miller — Website inquiry', _template: 'table', _url: `https://www.kellymillerrealestate.com/${appointment ? 'book-appointment' : 'contact'}`, form: appointment ? 'Book an Appointment' : 'Contact' }),
         signal: AbortSignal.timeout(20000),
       })
       const result = await response.json()
-      if (!response.ok || ![true, 'true'].includes(result.success) || /activat|confirm.*email/i.test(result.message || '')) throw new Error('Send not confirmed')
+      if (/activat|confirm.*email/i.test(result.message || '')) throw new Error('Activation required')
+      if (!response.ok || ![true, 'true'].includes(result.success)) throw new Error('Send not confirmed')
       form.reset()
       setStatus('success')
     } catch (err) {
-      setError(err.name === 'TimeoutError' || err instanceof TypeError ? 'We couldn’t confirm your message was sent. Please check your connection and try again, or email Kelly directly.' : 'Your message could not be sent. Please try again or email Kelly directly.')
+      setError(err.message === 'Activation required' ? 'Online message delivery is temporarily unavailable. Please contact Kelly directly.' : err.name === 'TimeoutError' || err instanceof TypeError ? 'We couldn’t confirm your message was sent. Please check your connection and try again, or email Kelly directly.' : 'Your message could not be sent. Please try again or email Kelly directly.')
       setStatus('error')
     } finally {
       pending.current = false
@@ -56,7 +58,7 @@ export default function ContactForm({ appointment = false }) {
         {status === 'success' && <p className="form-success" role="status">{appointment ? 'Your request has been sent to Kelly. She’ll follow up to arrange a time.' : 'Thank you—your message has been sent to Kelly.'}</p>}
         {status === 'error' && <p className="form-error" role="alert">{error} <a href={contact.emailHref}>Email Kelly</a> or <a href={contact.phoneHref}>call {contact.phone}</a>.</p>}
       </div>
-      <p className="form-note" id={noteId}>* Required fields. Your message goes directly to Kelly.</p>
+      <p className="form-note" id={noteId}>* Required fields. FormSubmit processes your inquiry and emails it to Kelly. Please don’t include financial documents or sensitive personal information. <Link to="/privacy">Privacy Notice</Link>.</p>
     </form>
   )
 }

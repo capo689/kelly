@@ -1,10 +1,10 @@
-import { Play } from 'lucide-react'
 import Hero from '../components/Hero'
 import PageTransition from '../components/PageTransition'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import CTASection from '../components/CTASection'
-import { videoTopics } from '../data/siteData'
+import { featureVideos } from '../data/videoData'
+import VideoFrame from '../components/VideoFrame'
 
 export default function Videos() {
   return (
@@ -12,15 +12,11 @@ export default function Videos() {
       <Hero eyebrow="Videos" title="See Oregon from the Cascades to the Coast" copy="A visual guide to the communities, landscapes, properties, and lifestyles Kelly serves." image="/media/IMG_2524.webp" position="center 58%" compact />
       <section className="section video-library">
         <div className="wrap">
-          <SectionHeading kicker="Field notes in motion" title="Stories from across Kelly’s Oregon." copy="The library is designed and ready for Kelly’s approved footage, titles, and captions. The current frames are drawn from her own photography." />
+          <SectionHeading kicker="Field notes in motion" title="A closer look at Oregon." copy="Explore a Cascade lake and summer along the river in Bend. Choose a film to play; both are silent, with a description beneath the player." />
           <div className="video-grid">
-            {videoTopics.map((video, index) => (
-              <Reveal className={`video-card ${video.preserveSubject ? 'safe-image' : ''} ${index === 0 ? 'feature' : ''}`} key={video.title} delay={(index % 3) * 80}>
-                {video.preserveSubject && <span className="safe-image-backdrop" style={{ backgroundImage: `url(${video.image})` }} aria-hidden="true" />}
-                <img src={video.image} alt={`${video.title} video preview`} loading="lazy" />
-                <div className="video-card-wash" />
-                <span className="video-play"><Play fill="currentColor" /></span>
-                <div className="video-card-copy"><span>{video.subtitle}</span><h3>{video.title}</h3><p>Film coming soon</p></div>
+            {Object.values(featureVideos).map((video) => (
+              <Reveal key={video.title}>
+                <VideoFrame video={video} />
               </Reveal>
             ))}
           </div>

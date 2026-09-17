@@ -1,0 +1,138 @@
+[
+  {
+    "file": "alpine-lake-snowy-peaks-water-level-720p.mp4",
+    "bytes": 2340105,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "format": {
+      "duration": "7.040367"
+    }
+  },
+  {
+    "file": "river-bend-sunset-aerial-loop.mp4",
+    "bytes": 5929691,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "format": {
+      "duration": "7.173833"
+    }
+  },
+  {
+    "file": "mountain-lake-sunset-aerial-loop.mp4",
+    "bytes": 5647471,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "format": {
+      "duration": "8.108100"
+    }
+  },
+  {
+    "file": "autumn-river-park-bridge-aerial-loop.mp4",
+    "bytes": 9464233,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "format": {
+      "duration": "11.911900"
+    }
+  },
+  {
+    "file": "summer-riverside-neighborhood-aerial.mp4",
+    "bytes": 6114607,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "format": {
+      "duration": "7.507500"
+    }
+  },
+  {
+    "file": "river-sunset-reflections-aerial-loop.mp4",
+    "bytes": 5828889,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "format": {
+      "duration": "6.973633"
+    }
+  },
+  {
+    "file": "alpine-lake-snowy-peaks-water-level.mp4",
+    "bytes": 5850172,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "format": {
+      "duration": "7.040367"
+    }
+  },
+  {
+    "file": "summer-riverside-neighborhood-aerial-720p.mp4",
+    "bytes": 2436486,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "format": {
+      "duration": "7.507500"
+    }
+  }
+]

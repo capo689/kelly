@@ -38,6 +38,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <nav className="wrap footer-policies" aria-label="Website policies"><Link to="/privacy">Privacy Notice</Link><Link to="/terms">Website Terms</Link><Link to="/accessibility">Accessibility</Link></nav>
       <div className="wrap footer-fine">
         <span>Kelly Miller, REALTOR®/Broker · {contact.license}</span>
         <span>Equal Housing Opportunity</span>
