@@ -2,6 +2,7 @@
   :root { --wrap: min(100% - 56px, 1120px); }
   .desktop-nav { display: none; }
   .header-cta { margin-left: auto; }
+  .header-credentials { right: calc(46px + 2rem); }
   .menu-toggle { display: grid; margin-left: 0; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .principle:nth-child(3) { border-left: 0; border-top: 1px solid rgba(255,255,255,0.16); }
@@ -14,6 +15,7 @@
   :root { --wrap: min(100% - 40px, 840px); --header-h: 78px; }
   .header-inner { width: calc(100% - 36px); }
   .header-cta { display: none; }
+  .header-credentials { right: 0; width: 220px; padding: 7px 12px 9px; border-radius: 0 0 20px 20px; }
   .brand-emblem { width: 38px; height: 38px; }
   .brand-copy b { font-size: 0.72rem; }
   .brand-copy small { font-size: 0.47rem; }

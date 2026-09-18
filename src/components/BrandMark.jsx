@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function BrandMark({ compact = false, inverse = false }) {
+export default function BrandMark({ compact = false, inverse = false, showCredentials = true }) {
   return (
     <Link className={`brand-mark ${compact ? 'compact' : ''} ${inverse ? 'inverse' : ''}`} to="/" aria-label="Kelly Miller Real Estate home">
       <span className="brand-emblem" aria-hidden="true">
@@ -13,8 +13,10 @@ export default function BrandMark({ compact = false, inverse = false }) {
       <span className="brand-copy">
         <b>Cascades to Coast</b>
         <small>Kelly Miller · Oregon Realtor®</small>
-        <small className="brand-brokerage">Fathom Realty Oregon, LLC</small>
-        <small className="brand-license">Oregon Lic. #201246475</small>
+        {showCredentials && <>
+          <small className="brand-brokerage">Fathom Realty Oregon, LLC</small>
+          <small className="brand-license">Oregon Lic. #201246475</small>
+        </>}
       </span>
     </Link>
   )

@@ -57,13 +57,17 @@ export default function Header() {
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-menu-open' : ''}`}>
       <div className="header-inner">
-        <BrandMark inverse />
+        <BrandMark inverse showCredentials={false} />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map((item) => (
             <NavLink key={item.to} to={item.to} end={item.to === '/'}>{item.label}</NavLink>
           ))}
         </nav>
         <Link className="header-cta" to="/contact">Get in Touch</Link>
+        <div className="header-credentials">
+          <span>Fathom Realty Oregon LLC</span>
+          <small>Oregon License #201246475</small>
+        </div>
         <button ref={toggle} className="menu-toggle" type="button" onClick={() => setOpen((value) => !value)} aria-controls="mobile-navigation" aria-expanded={open} aria-label={open ? 'Close menu' : 'Open menu'}>
           {open ? <X /> : <Menu />}
         </button>

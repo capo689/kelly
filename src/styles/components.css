@@ -25,6 +25,7 @@
 }
 
 .header-inner {
+  position: relative;
   width: min(1380px, calc(100% - 56px));
   height: 100%;
   margin-inline: auto;
@@ -140,6 +141,26 @@
   background: var(--gold);
   color: var(--deep);
 }
+
+.header-credentials {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 232px;
+  padding: 9px 16px 11px;
+  border: 1px solid rgba(221, 169, 78, 0.6);
+  border-top: 0;
+  border-radius: 0 0 24px 24px;
+  background: #1b3946;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.5;
+  box-shadow: 0 8px 18px rgba(13, 35, 44, 0.12);
+}
+
+.header-credentials > span { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.045em; text-transform: uppercase; }
+.header-credentials > small { display: block; margin-top: 2px; color: #e0e8eb; font-size: 10px; letter-spacing: 0.025em; }
+.site-header.is-menu-open .header-credentials { visibility: hidden; }
 
 .menu-toggle {
   display: none;
