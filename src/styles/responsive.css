@@ -59,6 +59,7 @@
 }
 
 @media (max-width: 640px) {
+  .footer-design-credit { margin-left: 0; flex-basis: 100%; }
   :root { --wrap: calc(100% - 34px); }
   .section { padding: 5.8rem 0; }
   .page-hero.compact { min-height: 820px; }
