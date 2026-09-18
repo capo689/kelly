@@ -424,6 +424,14 @@
   background: linear-gradient(180deg, rgba(17,42,53,0.48), transparent 180px), linear-gradient(90deg, rgba(17,42,53,0.83), rgba(17,42,53,0.62) 40%, rgba(17,42,53,0.12) 82%);
 }
 .page-hero.has-video .hero-content { padding-top: calc(var(--header-h) + 2.5rem); }
+
+/* Keep interior-page labels clear of the header, even when titles wrap. */
+.page-hero.compact:not(.reference-spacing) { align-items: start; }
+.page-hero.compact:not(.reference-spacing) .hero-content {
+  padding-top: calc(var(--header-h) + clamp(5rem, 9.5svh, 6rem));
+  padding-bottom: 5rem;
+}
+
 .hero-video-toggle {
   position: absolute;
   right: max(2rem, calc((100vw - 1240px) / 2));
