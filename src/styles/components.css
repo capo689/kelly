@@ -1,9 +1,11 @@
 .site-header {
+  --header-surface: rgba(27, 57, 70, 0.24);
   position: fixed;
   inset: 0 0 auto;
   z-index: 100;
   height: var(--header-h);
   color: var(--white);
+  background: var(--header-surface);
   transition: background 400ms ease, box-shadow 400ms ease, height 400ms ease;
 }
 
@@ -18,8 +20,9 @@
 }
 
 .site-header.is-scrolled {
+  --header-surface: rgba(27, 57, 70, 0.92);
   height: 76px;
-  background: rgba(27, 57, 70, 0.92);
+  background: var(--header-surface);
   box-shadow: 0 16px 45px rgba(13, 35, 44, 0.14);
   backdrop-filter: blur(18px) saturate(120%);
 }
@@ -148,15 +151,17 @@
   right: 0;
   width: 232px;
   padding: 9px 16px 11px;
-  border: 1px solid rgba(221, 169, 78, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-top: 0;
   border-radius: 0 0 24px 24px;
-  background: #1b3946;
+  background: var(--header-surface);
   color: var(--white);
   text-align: center;
   line-height: 1.5;
-  box-shadow: 0 8px 18px rgba(13, 35, 44, 0.12);
+  transition: background 400ms ease, box-shadow 400ms ease;
 }
+
+.site-header.is-scrolled .header-credentials { box-shadow: 0 8px 18px rgba(13, 35, 44, 0.08); }
 
 .header-credentials > span { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.045em; text-transform: uppercase; }
 .header-credentials > small { display: block; margin-top: 2px; color: #e0e8eb; font-size: 10px; letter-spacing: 0.025em; }
