@@ -4,6 +4,7 @@ export const SITE_URL = (import.meta.env?.VITE_SITE_URL || 'https://www.kellymil
 export const SITE_NAME = 'Kelly Miller Real Estate'
 
 const baseRoutes = [
+  ['/adus-in-bend-oregon', 'ADUs in Bend, Oregon: Property Possibilities | Kelly Miller', 'Explore Bend’s ADU rules, pre-approved plans, and property considerations with Kelly Miller, an ADU Specialist and Oregon REALTOR®/Broker.', '/media/Kobe3.webp'],
   ['/privacy', 'Privacy Notice | Kelly Miller Real Estate', 'How Kelly Miller’s website forms process your inquiry and deliver it by email, with contact details for privacy questions.', '/media/IMG_1895.webp'],
   ['/terms', 'Website Terms | Kelly Miller Real Estate', 'Information about website content, property examples, inquiries and appointments with Kelly Miller at Fathom Realty Oregon, LLC.', '/media/IMG_1895.webp'],
   ['/accessibility', 'Accessibility | Kelly Miller Real Estate', 'Accessibility features, improvement goals and direct contact options for help using Kelly Miller’s real-estate website.', '/media/IMG_1895.webp'],
@@ -26,6 +27,11 @@ const baseRoutes = [
 const staticSeo = Object.fromEntries(baseRoutes.map(([path, title, description, image]) => [path, { path, title, description, image }]))
 // Keep the unfinished testimonials page out of search until approved reviews exist.
 staticSeo['/testimonials'].noindex = true
+staticSeo['/life-with-two-homes-mountain-beach-living-oregon'].articleHeadline = 'Life With Two Homes: Mountain and Beach Living in Oregon'
+Object.assign(staticSeo['/adus-in-bend-oregon'], {
+  articleHeadline: 'ADUs in Bend, Oregon: More Possibilities for Your Property',
+  datePublished: '2026-09-19',
+})
 
 for (const community of communityRoutes) {
   staticSeo[community.path] = {
@@ -68,6 +74,9 @@ function breadcrumbSchema(page) {
     const coast = page.community.region === 'coast'
     items.push({ name: coast ? 'Central Oregon Coast' : 'Central Oregon', item: absolute(coast ? '/central-oregon-coast' : '/central-oregon') })
     items.push({ name: page.community.name, item: absolute(page.path) })
+  } else if (page.articleHeadline) {
+    items.push({ name: 'Journal', item: absolute('/blog') })
+    items.push({ name: page.articleHeadline, item: absolute(page.path) })
   } else if (page.path !== '/') {
     items.push({ name: page.title.split('|')[0].trim(), item: absolute(page.path) })
   }
@@ -94,9 +103,9 @@ export function getSeo(pathname = '/') {
       name: SITE_NAME, url: SITE_URL, publisher: { '@id': `${SITE_URL}/#real-estate-agent` },
     },
     {
-      '@context': 'https://schema.org', '@type': page.path.includes('life-with-two-homes') ? 'Article' : 'WebPage',
+      '@context': 'https://schema.org', '@type': page.articleHeadline ? 'Article' : 'WebPage',
       '@id': `${canonical}#webpage`, url: canonical, name: page.title, description: page.description,
-      ...(page.path.includes('life-with-two-homes') ? { headline: 'Life With Two Homes: Mountain and Beach Living in Oregon', author: { '@type': 'Person', name: 'Kelly Miller', url: absolute('/about-me') } } : {}),
+      ...(page.articleHeadline ? { headline: page.articleHeadline, image: absolute(page.image), ...(page.datePublished ? { datePublished: page.datePublished } : {}), author: { '@type': 'Person', name: 'Kelly Miller', url: absolute('/about-me') } } : {}),
       isPartOf: { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: SITE_NAME, url: SITE_URL },
       about: { '@id': `${SITE_URL}/#real-estate-agent` },
       primaryImageOfPage: { '@type': 'ImageObject', url: absolute(page.image) },

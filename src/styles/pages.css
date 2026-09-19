@@ -720,3 +720,48 @@
 .policy-content nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 .policy-content nav a { display: inline-flex; align-items: center; min-height: 44px; }
 .policy-date { color: var(--muted); font-size: 0.85rem; }
+
+/* Journal: Bend ADU guide. */
+.adu-article .page-hero.compact { min-height: 650px; }
+.adu-article .hero-content h1 { max-width: 850px; font-size: clamp(3.4rem, 6.5vw, 6.5rem); }
+.adu-article .hero-content p { max-width: 680px; }
+.adu-layout { display: grid; grid-template-columns: minmax(0, 760px) 260px; gap: clamp(3rem, 7vw, 7rem); justify-content: center; padding-block: clamp(3rem, 7vw, 7rem); }
+.adu-reading { min-width: 0; font-size: 1.0625rem; line-height: 1.85; }
+.adu-reading p { margin: 0 0 1.5rem; }
+.adu-reading .adu-byline { margin-block: 1.6rem 2rem; font-size: 0.78rem; line-height: 1.9; }
+.adu-reading .adu-intro { font-size: 1.22rem; color: var(--ink); }
+.adu-reading section { margin-top: 3rem; scroll-margin-top: 160px; }
+.adu-reading h2 { font-size: clamp(2.1rem, 3.5vw, 3.2rem); line-height: 1.15; margin: 0 0 1.5rem; }
+.adu-reading a:not(.button-link) { text-decoration: underline; text-underline-offset: 4px; }
+.adu-reading ul { padding-left: 1.4rem; margin: 0 0 1.8rem; }
+.adu-reading li { padding-left: 0.3rem; margin-bottom: 0.6rem; }
+.adu-reading .adu-source { font-size: 0.8rem; }
+.adu-property-photo { margin: 3rem 0; }
+.adu-property-photo img { width: 100%; height: auto; }
+.adu-property-photo figcaption { font-size: 0.75rem; margin-top: 0.65rem; }
+.adu-reading .adu-pullquote { border-left: 3px solid var(--accent-text); padding: 0.5rem 0 0.5rem 1.5rem; margin-block: 2rem; font-family: var(--serif); font-size: 1.8rem; line-height: 1.4; color: var(--ink); font-weight: 600; }
+.adu-reading .adu-disclaimer { padding: 2rem; background: var(--cream); margin-top: 4rem; font-size: 0.88rem; }
+.adu-disclaimer h2 { font-size: 1.8rem; }
+.adu-disclaimer p:last-child { margin-bottom: 0; }
+.adu-credential { background: white; border: 1px solid rgba(30, 60, 70, 0.12); padding: 1.8rem; text-align: center; }
+.adu-credential img { width: 100%; height: auto; }
+.adu-credential p { margin: 1.5rem 0 0; font-size: 0.78rem; line-height: 1.8; }
+.adu-credential strong { font-family: var(--serif); font-size: 1.7rem; color: var(--ink); }
+.adu-sidebar nav { display: flex; flex-direction: column; gap: 1rem; padding-block: 2rem; }
+.adu-sidebar nav a { font-size: 0.85rem; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .adu-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; max-width: 780px; }
+  .adu-sidebar { grid-row: 1; display: grid; grid-template-columns: 200px 1fr; gap: 2rem; align-items: center; }
+  .adu-credential { padding: 1rem; }
+  .adu-credential img { max-width: 150px; margin-inline: auto; }
+}
+@media (max-width: 560px) {
+  .adu-article .page-hero.compact { min-height: 570px; }
+  .adu-article .hero-content h1 { font-size: 3.4rem; }
+  .adu-sidebar { grid-template-columns: 1fr; gap: 0; }
+  .adu-credential { display: flex; gap: 1rem; align-items: center; text-align: left; }
+  .adu-credential img { width: 120px; margin: 0; }
+  .adu-credential p { margin: 0; }
+  .adu-sidebar nav { padding-bottom: 0; }
+  .adu-reading .adu-disclaimer { padding: 1.5rem; }
+}

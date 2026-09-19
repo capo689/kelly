@@ -21,7 +21,7 @@ function headMarkup(seo) {
     <meta name="description" content="${escapeAttribute(seo.description)}" />
     <meta name="robots" content="${robots}" />
     <link rel="canonical" href="${seo.canonical}" />
-    <meta property="og:type" content="${seo.path.includes('life-with-two-homes') ? 'article' : 'website'}" />
+    <meta property="og:type" content="${seo.articleHeadline ? 'article' : 'website'}" />
     <meta property="og:site_name" content="${SITE_NAME}" />
     <meta property="og:title" content="${escapeAttribute(seo.title)}" />
     <meta property="og:description" content="${escapeAttribute(seo.description)}" />

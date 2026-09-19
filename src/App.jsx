@@ -2,6 +2,7 @@ import { AnimatePresence, MotionConfig } from 'framer-motion'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import About from './pages/About'
 import Article from './pages/Article'
+import ADUArticle from './pages/ADUArticle'
 import Blog from './pages/Blog'
 import BookAppointment from './pages/BookAppointment'
 import CommunityPage from './pages/CommunityPage'
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/about-me" element={<About />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/adus-in-bend-oregon" element={<ADUArticle />} />
           <Route path="/life-with-two-homes-mountain-beach-living-oregon" element={<Article />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/contact" element={<Contact />} />

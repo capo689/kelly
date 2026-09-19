@@ -49,3 +49,7 @@ Client-supplied images are stored in `public/media/kelly-updates/` with descript
 ## Self-hosted fonts (September 17, 2026)
 
 Montserrat and Cormorant Garamond Latin WOFF2 files come from the official `@fontsource/montserrat` and `@fontsource/cormorant-garamond` npm packages, version 5.3.0. Both use the SIL Open Font License 1.1; their copyright and license notices are retained in `public/fonts/`. Fonts are served from this website instead of requesting Google Fonts.
+
+## September 19, 2026 ADU Journal article
+
+The client-provided `ADU+Specialist+Logo.png` is used unchanged at `public/brand/adu-specialist-logo.png` for Kelly’s credential. Previously unused client-supplied `Kobe3.webp` (overhead property view) and `Kobe2.webp` (exterior) now illustrate `/adus-in-bend-oregon`; Kobe3 also illustrates the Journal teaser. These are property inspiration, not representations that the depicted property has an ADU, is eligible for one, or is currently listed. Existing optimized WebP assets are reused.

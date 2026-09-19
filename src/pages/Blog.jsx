@@ -11,6 +11,19 @@ export default function Blog() {
     <PageTransition>
       <Hero eyebrow="Journal" title="Oregon Living, from the Cascades to the Coast" copy="Explore the communities, landscapes, and lifestyles that make Central Oregon and the Central Oregon Coast extraordinary places to call home." image="/media/IMG_1089.webp" position="center 65%" compact />
 
+      <section className="section featured-article">
+        <div className="wrap featured-article-grid">
+          <Reveal className="featured-article-image image-reveal" direction="scale"><img src="/media/Kobe3.webp" alt="Overhead view of a home, decks, and a tree-lined residential lot" width="1920" height="1279" loading="lazy" /></Reveal>
+          <Reveal direction="right" className="featured-article-copy">
+            <div className="section-kicker">Latest story · Property possibilities</div>
+            <h2>ADUs in Bend, Oregon</h2>
+            <p className="article-subtitle">More Possibilities for Your Property</p>
+            <p>Space for family, flexibility for guests, or a new investment possibility. Explore Bend’s ADU rules and how Kelly can help you ask the right questions about your property.</p>
+            <Link to="/adus-in-bend-oregon" className="button-link dark">Read the ADU Guide <ArrowUpRight size={17} /></Link>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section journal-intro">
         <div className="wrap">
           <Reveal className="journal-intro-heading"><div className="section-kicker">A life between two landscapes</div><h2>One Oregon. Two extraordinary ways to live.</h2><p>Start with the landscape that draws you in. Then imagine the everyday moments that would make it home.</p></Reveal>
