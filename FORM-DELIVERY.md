@@ -31,6 +31,19 @@ message is not visible. Never report a local or simulated submit as delivery.
 
 ## Behavior
 
+September 19 delivery follow-up: Adam confirmed Kelly received the September 17
+test, so activation and at least one inbox delivery are confirmed. Kelly later
+reported missing newer submissions despite a success message. Do not repeat
+activation or interpret provider acceptance as proof of inbox placement.
+
+Each JavaScript submission now has a unique reference in its email subject,
+message body and visitor confirmation, plus the visitor name in the subject.
+This avoids reusing an identical subject for every inquiry and makes missing
+messages searchable. A populated honeypot is caught before transmission with a
+visible retry message instead of allowing the provider's documented silent
+discard. These are defensive corrections, not proof of the cause of Kelly's
+missing messages. Check Gmail Spam/All Mail and provider records when necessary.
+
 Required name, valid email and message; field length limits; hidden spam field;
 disabled fields while submitting; retained input on error; visible success or
 error; direct email and telephone fallback; no automatic retries on uncertain

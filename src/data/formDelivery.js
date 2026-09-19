@@ -14,6 +14,20 @@ export function formDeliveryFields(appointment = false) {
   }
 }
 
+export function submissionPayload(fields, appointment, reference) {
+  // Never let the provider silently discard an autofilled honeypot as a success.
+  if (String(fields._honey || '').trim()) throw new Error('Spam field filled')
+  const delivery = formDeliveryFields(appointment)
+  const name = String(fields.name || '').replace(/[\r\n]+/g, ' ').trim().slice(0, 120)
+  return {
+    ...fields,
+    ...delivery,
+    _subject: `${delivery._subject} — ${name} [${reference}]`,
+    _replyto: String(fields.email || '').trim(),
+    submission_reference: reference,
+  }
+}
+
 export function assertSubmissionAccepted(responseOk, result) {
   if (responseOk && [true, 'true'].includes(result?.success)) return
   if (/needs? activation|activation required|activate (?:your|this|the) form/i.test(result?.message || '')) {

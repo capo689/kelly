@@ -2,13 +2,14 @@ import { useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { contact } from '../data/siteData'
-import { FORM_ENDPOINT, FORM_AJAX_ENDPOINT, formDeliveryFields, assertSubmissionAccepted } from '../data/formDelivery'
+import { FORM_ENDPOINT, FORM_AJAX_ENDPOINT, formDeliveryFields, submissionPayload, assertSubmissionAccepted } from '../data/formDelivery'
 
 export default function ContactForm({ appointment = false }) {
   const noteId = useId()
   const pending = useRef(false)
   const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
+  const [reference, setReference] = useState('')
 
   async function submit(event) {
     event.preventDefault()
@@ -19,18 +20,24 @@ export default function ContactForm({ appointment = false }) {
     setStatus('sending')
     setError('')
     try {
+      const submissionReference = `KM-${crypto.randomUUID().slice(0, 8).toUpperCase()}`
+      const payload = submissionPayload(fields, appointment, submissionReference)
       const response = await fetch(FORM_AJAX_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...fields, ...formDeliveryFields(appointment) }),
+        body: JSON.stringify(payload),
         signal: AbortSignal.timeout(20000),
       })
       const result = await response.json()
       assertSubmissionAccepted(response.ok, result)
       form.reset()
+      setReference(submissionReference)
       setStatus('success')
     } catch (err) {
-      setError(err.message === 'Activation required' ? 'Online message delivery is temporarily unavailable. Please contact Kelly directly.' : err.name === 'TimeoutError' || err instanceof TypeError ? 'We couldn’t confirm your message was sent. Please check your connection and try again, or email Kelly directly.' : 'Your message could not be sent. Please try again or email Kelly directly.')
+      if (err.message === 'Spam field filled') {
+        form.elements.namedItem('_honey').value = ''
+      }
+      setError(err.message === 'Spam field filled' ? 'An automatic field-fill prevented sending. Your message is still here; please press Send again.' : err.message === 'Activation required' ? 'Online message delivery is temporarily unavailable. Please contact Kelly directly.' : err.name === 'TimeoutError' || err instanceof TypeError ? 'We couldn’t confirm your message was sent. Please check your connection and try again, or email Kelly directly.' : 'Your message could not be sent. Please try again or email Kelly directly.')
       setStatus('error')
     } finally {
       pending.current = false
@@ -54,7 +61,7 @@ export default function ContactForm({ appointment = false }) {
         <button type="submit" className="form-button" aria-describedby={noteId}>{status === 'sending' ? 'Sending…' : appointment ? 'Send Request' : 'Send Message'}<ArrowUpRight aria-hidden="true" /></button>
       </fieldset>
       <div className="form-feedback" aria-live="polite" aria-atomic="true">
-        {status === 'success' && <p className="form-success" role="status">{appointment ? 'Your request has been sent to Kelly. She’ll follow up to arrange a time.' : 'Thank you—your message has been sent to Kelly.'}</p>}
+        {status === 'success' && <p className="form-success" role="status">{appointment ? 'Thank you—your appointment request has been submitted.' : 'Thank you—your message has been submitted.'} Reference: {reference}. If you don’t hear back, please <a href={contact.emailHref}>email Kelly directly</a>.</p>}
         {status === 'error' && <p className="form-error" role="alert">{error} <a href={contact.emailHref}>Email Kelly</a> or <a href={contact.phoneHref}>call {contact.phone}</a>.</p>}
       </div>
       <p className="form-note" id={noteId}>* Required fields. FormSubmit processes your inquiry and emails it to Kelly. Please don’t include financial documents or sensitive personal information. <Link to="/privacy">Privacy Notice</Link>.</p>
