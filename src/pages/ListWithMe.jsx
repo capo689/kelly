@@ -39,13 +39,13 @@ export default function ListWithMe() {
             </Reveal>
             <Reveal className="seller-step" delay={100}>
               <div className="seller-step-number">02</div>
-              <ImageFrame src="/media/35-web-or-mls-63115-De-Haviland-St-127.webp" alt="De Haviland property prepared for buyers" />
+              <ImageFrame src="/media/kelly-updates/presented-vanity.webp" alt="Bathroom vanity with blue tile, warm wood cabinetry, and a green plant" position="center 60%" />
               <h3>Presented</h3>
               <p>Show the home with care, context, and a strong sense of place.</p>
             </Reveal>
             <Reveal className="seller-step coming-soon" delay={200}>
               <div className="seller-step-number">03</div>
-              <div className="coming-soon-image"><img src="/media/Main_front.webp" alt="Example home exterior" loading="lazy" /><span>Your home next</span></div>
+              <div className="coming-soon-image"><img src="/media/kelly-updates/next-home-exterior.webp" alt="Home exterior framed by leafy trees" loading="lazy" /><span>Your home next</span></div>
               <h3>Next</h3>
               <p>This could be your home going on the market next.</p>
             </Reveal>
