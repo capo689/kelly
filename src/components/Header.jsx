@@ -65,7 +65,7 @@ export default function Header() {
         </nav>
         <Link className="header-cta" to="/contact">Get in Touch</Link>
         <div className="header-credentials">
-          <span>Fathom Realty Oregon LLC</span>
+          <span>Kelly Miller</span>
           <small>Oregon License #201246475</small>
         </div>
         <button ref={toggle} className="menu-toggle" type="button" onClick={() => setOpen((value) => !value)} aria-controls="mobile-navigation" aria-expanded={open} aria-label={open ? 'Close menu' : 'Open menu'}>
