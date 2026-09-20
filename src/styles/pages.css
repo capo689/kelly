@@ -765,3 +765,11 @@
   .adu-sidebar nav { padding-bottom: 0; }
   .adu-reading .adu-disclaimer { padding: 1.5rem; }
 }
+
+.adu-reading .adu-status-note { background: var(--cream); padding: 1.5rem; border-left: 3px solid var(--accent-text); font-size: 0.95rem; }
+.yachats-shore-photo img { aspect-ratio: 4 / 3; object-fit: cover; object-position: center 60%; }
+.adu-reading .adu-related { margin-top: 2rem; font-size: 0.9rem; }
+
+@media (max-width: 560px) {
+  .yachats-adu-article .hero-content h1 { font-size: clamp(2.35rem, 10.5vw, 3.4rem); }
+}

@@ -4,6 +4,7 @@ export const SITE_URL = (import.meta.env?.VITE_SITE_URL || 'https://www.kellymil
 export const SITE_NAME = 'Kelly Miller Real Estate'
 
 const baseRoutes = [
+  ['/adu-opportunities-yachats', 'ADU Opportunities in Yachats, Oregon | Kelly Miller', 'Explore Yachats’ proposed ADU changes, coastal property possibilities, and questions for buyers with Kelly Miller, a Certified ADU Specialist.', '/media/24_Horizon_Hill_Rd_lot.webp'],
   ['/adus-in-bend-oregon', 'ADUs in Bend, Oregon: Property Possibilities | Kelly Miller', 'Explore Bend’s ADU rules, pre-approved plans, and property considerations with Kelly Miller, an ADU Specialist and Oregon REALTOR®/Broker.', '/media/Kobe3.webp'],
   ['/privacy', 'Privacy Notice | Kelly Miller Real Estate', 'How Kelly Miller’s website handles inquiries, email delivery, Google Analytics and cookies, with contact details for privacy questions.', '/media/IMG_1895.webp'],
   ['/terms', 'Website Terms | Kelly Miller Real Estate', 'Information about website content, property examples, inquiries and appointments with Kelly Miller at Fathom Realty Oregon, LLC.', '/media/IMG_1895.webp'],
@@ -27,6 +28,10 @@ const baseRoutes = [
 const staticSeo = Object.fromEntries(baseRoutes.map(([path, title, description, image]) => [path, { path, title, description, image }]))
 // Keep the unfinished testimonials page out of search until approved reviews exist.
 staticSeo['/testimonials'].noindex = true
+Object.assign(staticSeo['/adu-opportunities-yachats'], {
+  articleHeadline: 'ADU Opportunities in Yachats: Proposed Changes and Coastal Property Possibilities',
+  datePublished: '2026-09-20',
+})
 staticSeo['/life-with-two-homes-mountain-beach-living-oregon'].articleHeadline = 'Life With Two Homes: Mountain and Beach Living in Oregon'
 Object.assign(staticSeo['/adus-in-bend-oregon'], {
   articleHeadline: 'ADUs in Bend, Oregon: More Possibilities for Your Property',

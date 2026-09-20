@@ -13,9 +13,22 @@ export default function Blog() {
 
       <section className="section featured-article">
         <div className="wrap featured-article-grid">
+          <Reveal className="featured-article-image image-reveal" direction="scale"><img src="/media/24_Horizon_Hill_Rd_lot.webp" alt="Aerial view of homes, trees, and the Pacific shoreline in Yachats" width="1536" height="1024" loading="lazy" style={{ objectPosition: 'center 30%' }} /></Reveal>
+          <Reveal direction="right" className="featured-article-copy">
+            <div className="section-kicker">Latest story · Coastal possibilities</div>
+            <h2>ADU Opportunities in Yachats</h2>
+            <p className="article-subtitle">Look beyond the house.</p>
+            <p>What could Yachats’ proposed ADU changes mean for your coastal home search? Explore the possibilities with Kelly, from space for family to long-term rental potential.</p>
+            <Link to="/adu-opportunities-yachats" className="button-link dark">Read the Yachats Story <ArrowUpRight size={17} /></Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section featured-article">
+        <div className="wrap featured-article-grid">
           <Reveal className="featured-article-image image-reveal" direction="scale"><img src="/media/Kobe3.webp" alt="Overhead view of a home, decks, and a tree-lined residential lot" width="1920" height="1279" loading="lazy" /></Reveal>
           <Reveal direction="right" className="featured-article-copy">
-            <div className="section-kicker">Latest story · Property possibilities</div>
+            <div className="section-kicker">ADU guide · Central Oregon</div>
             <h2>ADUs in Bend, Oregon</h2>
             <p className="article-subtitle">More Possibilities for Your Property</p>
             <p>Space for family, flexibility for guests, or a new investment possibility. Explore Bend’s ADU rules and how Kelly can help you ask the right questions about your property.</p>

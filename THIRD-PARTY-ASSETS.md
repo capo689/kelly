@@ -53,3 +53,13 @@ Montserrat and Cormorant Garamond Latin WOFF2 files come from the official `@fon
 ## September 19, 2026 ADU Journal article
 
 The client-provided `ADU+Specialist+Logo.png` is used unchanged at `public/brand/adu-specialist-logo.png` for Kelly’s credential. Previously unused client-supplied `Kobe3.webp` (overhead property view) and `Kobe2.webp` (exterior) now illustrate `/adus-in-bend-oregon`; Kobe3 also illustrates the Journal teaser. These are property inspiration, not representations that the depicted property has an ADU, is eligible for one, or is currently listed. Existing optimized WebP assets are reused.
+
+## September 20, 2026 Yachats ADU Journal article
+
+All photographs and the logo for `/adu-opportunities-yachats` are client-supplied; no new stock or web-sourced photography was licensed or downloaded.
+
+- `public/media/24_Horizon_Hill_Rd_lot.webp`: client-supplied Yachats aerial, used as the article hero and Journal teaser. Kelly identified this coastal property image as Yachats in her September photo corrections. Original asset: `24_Horizon_Hill_Rd_lot.jpg` from the supplied site media. Reuses the existing WebP, displayed with responsive cropping. The original copyright marking remains in the file. This is location imagery, not a current listing or a verified ADU property.
+- `public/media/kelly-updates/kiva-yachats.webp`: Kelly-supplied `Kiva in Yachats.jpeg`, retained in `../source-photos/september-updates/`. Used as the supporting shoreline image with a caption; existing optimized WebP displayed with responsive cropping.
+- `public/brand/adu-specialist-logo.png`: supplied `ADU+Specialist+Logo.png`, reused unchanged in the same credential card as the Bend article.
+
+Client-provided assets remain subject to their owners’ rights and are used for this client website; no public-domain or Creative Commons license is asserted for them. Publication use was requested by the user on September 20, 2026.
