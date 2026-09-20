@@ -5,7 +5,7 @@ export const SITE_NAME = 'Kelly Miller Real Estate'
 
 const baseRoutes = [
   ['/adus-in-bend-oregon', 'ADUs in Bend, Oregon: Property Possibilities | Kelly Miller', 'Explore Bend’s ADU rules, pre-approved plans, and property considerations with Kelly Miller, an ADU Specialist and Oregon REALTOR®/Broker.', '/media/Kobe3.webp'],
-  ['/privacy', 'Privacy Notice | Kelly Miller Real Estate', 'How Kelly Miller’s website forms process your inquiry and deliver it by email, with contact details for privacy questions.', '/media/IMG_1895.webp'],
+  ['/privacy', 'Privacy Notice | Kelly Miller Real Estate', 'How Kelly Miller’s website handles inquiries, email delivery, Google Analytics and cookies, with contact details for privacy questions.', '/media/IMG_1895.webp'],
   ['/terms', 'Website Terms | Kelly Miller Real Estate', 'Information about website content, property examples, inquiries and appointments with Kelly Miller at Fathom Realty Oregon, LLC.', '/media/IMG_1895.webp'],
   ['/accessibility', 'Accessibility | Kelly Miller Real Estate', 'Accessibility features, improvement goals and direct contact options for help using Kelly Miller’s real-estate website.', '/media/IMG_1895.webp'],
   ['/', 'Central Oregon & Oregon Coast Real Estate | Kelly Miller', 'Explore Central Oregon and Central Oregon Coast real estate with Kelly Miller, an Oregon REALTOR®/Broker (Lic. #201246475) connecting the Cascades and the coast.', '/media/IMG_1895.webp'],

@@ -2,6 +2,7 @@ import { useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { contact } from '../data/siteData'
+import { trackAcceptedInquiry } from '../data/analytics'
 import { FORM_ENDPOINT, FORM_AJAX_ENDPOINT, formDeliveryFields, submissionPayload, assertSubmissionAccepted } from '../data/formDelivery'
 
 export default function ContactForm({ appointment = false }) {
@@ -33,6 +34,7 @@ export default function ContactForm({ appointment = false }) {
       form.reset()
       setReference(submissionReference)
       setStatus('success')
+      trackAcceptedInquiry(appointment)
     } catch (err) {
       if (err.message === 'Spam field filled') {
         form.elements.namedItem('_honey').value = ''

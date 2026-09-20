@@ -20,6 +20,7 @@ import Policy from './pages/Policy'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import SEO from './components/SEO'
+import Analytics from './components/Analytics'
 import SmoothScroll from './components/SmoothScroll'
 import { communityRoutes } from './data/communityData'
 import { regionPages } from './data/siteData'
@@ -30,6 +31,7 @@ export default function App() {
     <MotionConfig reducedMotion="user"><div className="site-shell">
       <SmoothScroll />
       <SEO />
+      <Analytics />
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <Header />
       <AnimatePresence mode="wait">

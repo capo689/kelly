@@ -5,7 +5,7 @@ import { contact } from '../data/siteData'
 const sections = {
   privacy: {
     title: 'Privacy Notice',
-    intro: 'A simple explanation of what happens when you contact Kelly through this website.',
+    intro: 'How this website handles your inquiries and measures website use.',
     content: <>
       <h2>Who you are contacting</h2>
       <p>This is Kelly Miller’s real-estate website. Kelly is an Oregon REALTOR®/Broker with Fathom Realty Oregon, LLC, Oregon license #201246475.</p>
@@ -16,7 +16,10 @@ const sections = {
       <p>FormSubmit processes form submissions and delivers them to Kelly’s Gmail inbox. FormSubmit’s documentation describes a 30-day submission archive. Emails received by Kelly remain separate from that archive; the provider’s archive period does not mean copies in email are automatically deleted.</p>
       <p>Vercel hosts this website. Hosting, form and email providers may process technical information, such as IP addresses and request details, to deliver and protect their services. Read <a href="https://formsubmit.co/privacy.pdf">FormSubmit’s privacy policy</a>, <a href="https://vercel.com/legal/privacy-policy">Vercel’s privacy policy</a> and <a href="https://policies.google.com/privacy">Google’s privacy policy</a> for their practices.</p>
       <h2>Cookies, analytics and external links</h2>
-      <p>This website does not use advertising pixels or analytics tools, and its fonts, photographs and videos are served from the website. Following a social-media or other external link takes you to a service with its own privacy practices. Form processing providers may use their own security technologies when you use their services.</p>
+      <p>This website uses Google Analytics to understand visits, pages viewed, traffic sources, device and browser information, and interactions such as phone or email link clicks and accepted form submissions. Google Analytics uses cookies to distinguish visitors and sessions. Google processes this information to provide website usage reports.</p>
+      <p>Our custom contact and inquiry events record the contact method or form type. They do not include the names, email addresses, phone numbers or messages entered in our forms. An accepted-submission event indicates that the form service accepted the request, not that email delivery to an inbox was confirmed. Google Signals and advertising personalization are disabled in this website’s analytics configuration.</p>
+      <p>You can manage cookies through your browser and use <a href="https://tools.google.com/dlpage/gaoptout">Google’s Analytics opt-out browser add-on</a>. Learn more about <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from sites that use its services</a>.</p>
+      <p>The website’s fonts, photographs and videos are served from the website. Following a social-media or other external link takes you to a service with its own privacy practices. Form processing providers may use their own security technologies when you use their services.</p>
       <h2>Questions about your information</h2>
       <p>Contact Kelly to ask about information you have sent or request its correction or deletion. Any applicable legal or brokerage recordkeeping requirements may affect what can be deleted. Do not submit a new inquiry containing sensitive documents to make a privacy request.</p>
       <p>This notice describes the website’s current inquiry process. It may be updated if the services or information practices change.</p>
@@ -57,7 +60,7 @@ export default function Policy({ kind }) {
   return <PageTransition>
     <section className="policy-heading"><div className="wrap"><p className="section-kicker">Kelly Miller · Fathom Realty Oregon, LLC</p><h1>{page.title}</h1><p>{page.intro}</p></div></section>
     <article className="wrap policy-content">
-      <p className="policy-date">Updated September 17, 2026</p>
+      <p className="policy-date">Updated {kind === 'privacy' ? 'September 20, 2026' : 'September 17, 2026'}</p>
       {page.content}
       <h2>Contact Kelly</h2>
       <p><a href={contact.emailHref}>{contact.email}</a><br /><a href={contact.phoneHref}>{contact.phone}</a></p>
